@@ -1,7 +1,9 @@
 import React from 'react';
+import { addProductToCart } from '../lib/ShopifyManager';
 
 interface Product {
   id: string;
+  variantId?: string;
   title: string;
   price: number;
   originalPrice: string;
@@ -150,21 +152,31 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
             Details
           </button>
           
-          <a 
-            href={product.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-copper"
-            style={{ 
-              flex: 1, 
-              padding: '0.5rem 1rem', 
-              fontSize: '0.9rem',
-              textAlign: 'center',
-              textDecoration: 'none'
-            }}
-          >
-            {product.platform === 'Shopify' ? 'Buy on Shopify' : 'Buy on Etsy'}
-          </a>
+          {product.platform === 'Shopify' && product.variantId ? (
+            <button 
+              onClick={() => addProductToCart(product.variantId!)}
+              className="btn btn-copper"
+              style={{ flex: 1, padding: '0.5rem 1rem', fontSize: '0.9rem' }}
+            >
+              Buy on Shopify
+            </button>
+          ) : (
+            <a 
+              href={product.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-copper"
+              style={{ 
+                flex: 1, 
+                padding: '0.5rem 1rem', 
+                fontSize: '0.9rem',
+                textAlign: 'center',
+                textDecoration: 'none'
+              }}
+            >
+              Buy on Etsy
+            </a>
+          )}
         </div>
       </div>
 

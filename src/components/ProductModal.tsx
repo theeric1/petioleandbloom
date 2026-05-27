@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { addProductToCart } from '../lib/ShopifyManager';
 
 interface Product {
   id: string;
+  variantId?: string;
   title: string;
   price: number;
   originalPrice: string;
@@ -240,22 +242,43 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
 
             {/* Buy / Checkout Actions */}
             <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto', paddingTop: '0.5rem' }}>
-              <a 
-                href={product.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-copper"
-                style={{
-                  flex: 1,
-                  textAlign: 'center',
-                  textDecoration: 'none',
-                  paddingBlock: '1rem',
-                  fontSize: '1.05rem',
-                  fontWeight: 600
-                }}
-              >
-                {product.platform === 'Shopify' ? 'Buy on Shopify' : 'Buy on Etsy (via Share & Save)'}
-              </a>
+              {product.platform === 'Shopify' && product.variantId ? (
+                <button
+                  onClick={() => {
+                    addProductToCart(product.variantId!);
+                    onClose(); // Optional: close modal on add to cart
+                  }}
+                  className="btn btn-copper"
+                  style={{
+                    flex: 1,
+                    textAlign: 'center',
+                    paddingBlock: '1rem',
+                    fontSize: '1.05rem',
+                    fontWeight: 600,
+                    border: 'none',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Buy on Shopify
+                </button>
+              ) : (
+                <a 
+                  href={product.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-copper"
+                  style={{
+                    flex: 1,
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    paddingBlock: '1rem',
+                    fontSize: '1.05rem',
+                    fontWeight: 600
+                  }}
+                >
+                  Buy on Etsy (via Share & Save)
+                </a>
+              )}
             </div>
 
           </div>

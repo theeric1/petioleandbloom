@@ -1,6 +1,7 @@
 [
   {
     "id": "shopify-9344714768627",
+    "variantId": "48326838419699",
     "title": "Musa \"Aurea\" Variegated (Extremely Rare)",
     "price": 149.0,
     "originalPrice": "149.0 USD",
@@ -15,6 +16,7 @@
   },
   {
     "id": "shopify-9344714670323",
+    "variantId": "48326838321395",
     "title": "Lakatan “Golden” Banana Plant (Lacatan)",
     "price": 23.99,
     "originalPrice": "23.99 USD",
@@ -29,6 +31,7 @@
   },
   {
     "id": "shopify-9336940429555",
+    "variantId": "48290373927155",
     "title": "Defy -- Peptide Face Serum",
     "price": 49.99,
     "originalPrice": "49.99 USD",
@@ -43,6 +46,7 @@
   },
   {
     "id": "shopify-9288757903603",
+    "variantId": "48124406333683",
     "title": "Truly Tiny Banana Plant | Dwarf Fruit-Producing Musa",
     "price": 22.99,
     "originalPrice": "22.99 USD",
@@ -57,6 +61,7 @@
   },
   {
     "id": "shopify-9288757870835",
+    "variantId": "48124406268147",
     "title": "Vanilla Orchid | Actual Vanilla Bean Plant",
     "price": 22.99,
     "originalPrice": "22.99 USD",
@@ -71,6 +76,7 @@
   },
   {
     "id": "shopify-9288757838067",
+    "variantId": "48124406202611",
     "title": "Vanilla Super Variegated Orchid | Actual Vanilla Bean Plant",
     "price": 23.99,
     "originalPrice": "23.99 USD",

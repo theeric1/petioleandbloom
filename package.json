@@ -12,8 +12,10 @@
     "sync-etsy-full": "./venv/bin/python scripts/full_sync_etsy.py"
   },
   "dependencies": {
+    "@shopify/buy-button-js": "^3.0.6",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "react-dom": "^19.2.6",
+    "shopify-buy": "^3.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

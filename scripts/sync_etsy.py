@@ -61,9 +61,11 @@ def fetch_shopify_products():
             data = r.json()
             for prod in data.get('products', []):
                 price_val = 0.0
+                variant_id = ""
                 if prod.get('variants') and len(prod['variants']) > 0:
                     try:
                         price_val = float(prod['variants'][0]['price'])
+                        variant_id = str(prod['variants'][0]['id'])
                     except:
                         pass
                 
@@ -78,6 +80,7 @@ def fetch_shopify_products():
 
                 products.append({
                     "id": f"shopify-{prod['id']}",
+                    "variantId": variant_id,
                     "title": prod['title'],
                     "price": price_val,
                     "originalPrice": f"{price_val} USD",

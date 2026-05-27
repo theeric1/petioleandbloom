@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { ProductCard } from './components/ProductCard';
 import { ProductModal } from './components/ProductModal';
 import productsData from './data/products.json';
+import { initShopify } from './lib/ShopifyManager';
 
 interface Product {
   id: string;
+  variantId?: string;
   title: string;
   price: number;
   originalPrice: string;
@@ -31,6 +33,10 @@ function App() {
   // Shop Tab State
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
+
+  useEffect(() => {
+    initShopify();
+  }, []);
 
   // Contact Form State
   const [contactSubmitted, setContactSubmitted] = useState<boolean>(false);
