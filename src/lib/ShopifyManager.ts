@@ -1,3 +1,4 @@
+// @ts-ignore
 import ShopifyBuy from '@shopify/buy-button-js';
 
 let uiInstance: any = null;

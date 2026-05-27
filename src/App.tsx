@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
-import { ProductCard } from './components/ProductCard';
 import { ProductModal } from './components/ProductModal';
+import { ShopGrid } from './components/ShopGrid';
 import productsData from './data/products.json';
 import { initShopify } from './lib/ShopifyManager';
 
@@ -73,11 +73,6 @@ function App() {
     return matchesSearch && matchesCategory;
   });
 
-  // Featured products for the Home tab
-  const featuredProducts = (productsData as Product[]).filter(
-    (product) => product.isFeatured || product.price > 80 || product.title.includes("Vanilla Super Variegated")
-  ).slice(0, 4);
-
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }} className="gradient-bg-hero">
       
@@ -91,130 +86,75 @@ function App() {
         {currentTab === 'home' && (
           <div>
             {/* Hero Section */}
-            <section className="section-pad" style={{ paddingBottom: '3rem' }}>
-              <div className="container hero-grid" style={{
-                display: 'grid',
-                gridTemplateColumns: '1.2fr 0.8fr',
-                gap: '3rem',
-                alignItems: 'center'
-              }}>
-                
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                  <span className="science-badge">🌿 Thoughtfully Cultivated, Cleanly Formulated</span>
-                  <h1 style={{ margin: 0 }}>
-                    The Harmony of <br />
-                    <span className="gradient-text" style={{ fontStyle: 'italic' }}>Plants & Clean Science</span>
-                  </h1>
-                  <p style={{ fontSize: '1.15rem', lineHeight: 1.6, margin: 0 }}>
-                    Welcome to Petiole & Bloom. We grow rare, well-established tropical plants and formulate gentle, supportive serums. A balanced blend of natural care and thoughtful ingredients.
-                  </p>
-                  
-                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>
-                    <button 
-                      onClick={() => setCurrentTab('shop')}
-                      className="btn btn-primary"
-                    >
-                      Explore Shop
-                    </button>
-                    <button 
-                      onClick={() => setCurrentTab('science')}
-                      className="btn btn-secondary"
-                    >
-                      Learn More
-                    </button>
-                  </div>
-                </div>
+            <section style={{ 
+              paddingTop: '2rem', 
+              paddingBottom: '2rem',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              {/* Background Glow */}
+              <div style={{
+                position: 'absolute',
+                top: '-50%',
+                right: '-20%',
+                width: '80%',
+                height: '150%',
+                background: 'radial-gradient(ellipse at center, rgba(39, 74, 56, 0.15) 0%, transparent 70%)',
+                zIndex: 0,
+                pointerEvents: 'none'
+              }} />
 
-                {/* Hero Featured Specimen Widget (Glassmorphism overlay) */}
-                <div className="glass-panel" style={{
-                  padding: '1.5rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '1.2rem',
-                  position: 'relative'
+              <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+                <span className="science-badge" style={{ marginBottom: '1rem', display: 'inline-block' }}>🌿 Thoughtfully Cultivated, Cleanly Formulated</span>
+                
+                <h1 style={{ 
+                  margin: '0 0 1rem 0', 
+                  fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                  lineHeight: 1.1 
                 }}>
-                  <div style={{ position: 'relative', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
-                    <img 
-                      src="/images/products/ghk-cu-serum.jpg" 
-                      alt="Copper Peptide Serum Bottle"
-                      style={{ width: '100%', height: '240px', objectFit: 'cover' }}
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600';
-                      }}
-                    />
-                    <div style={{
-                      position: 'absolute',
-                      bottom: '12px',
-                      left: '12px',
-                      backgroundColor: 'var(--brand-secondary)',
-                      color: 'white',
-                      padding: '0.3rem 0.8rem',
-                      borderRadius: '50px',
-                      fontSize: '0.8rem',
-                      fontWeight: 600
-                    }}>
-                      Nursery Highlight
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h3 style={{ fontFamily: 'var(--font-body)', fontSize: '1.15rem', fontWeight: 600, margin: '0 0 0.4rem 0' }}>
-                      Copper Peptide Rejuvenation Serum
-                    </h3>
-                    <p style={{ fontSize: '0.9rem', margin: 0, lineHeight: 1.4 }}>
-                      A gentle, hydrating skin serum designed to support healthy rejuvenation and a glowing complexion.
-                    </p>
-                  </div>
-                  
+                  Rare Plants &<br />
+                  <span className="gradient-text" style={{ fontStyle: 'italic' }}>Clean Science</span>
+                </h1>
+                
+                <p style={{ 
+                  fontSize: '1.15rem', 
+                  lineHeight: 1.5, 
+                  margin: '0 0 2rem 0',
+                  color: 'var(--text-secondary)'
+                }}>
+                  Propagators of rare tropical botanical specimens and synthesizers of gentle, supportive skin serums.
+                </p>
+                
+                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
                   <button 
                     onClick={() => {
-                      const ghkProduct = (productsData as Product[]).find(p => p.title.toLowerCase().includes("copper peptide"));
-                      if (ghkProduct) {
-                        setSelectedProduct(ghkProduct);
-                      } else if (productsData.length > 0) {
-                        setSelectedProduct(productsData[0] as Product);
-                      }
+                      document.getElementById('shop-section')?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="btn btn-secondary" 
-                    style={{ padding: '0.5rem', width: '100%', fontSize: '0.9rem' }}
+                    className="btn btn-primary"
+                    style={{ padding: '0.8rem 2rem', fontSize: '1.05rem' }}
                   >
-                    Quick View Formula
+                    Shop Collection
+                  </button>
+                  <button 
+                    onClick={() => setCurrentTab('science')}
+                    className="btn btn-secondary"
+                    style={{ padding: '0.8rem 2rem', fontSize: '1.05rem' }}
+                  >
+                    Our Formula
                   </button>
                 </div>
-
               </div>
             </section>
 
-            {/* Statistics Banner */}
-            <section style={{ 
-              backgroundColor: 'var(--bg-surface)', 
-              paddingBlock: '2.5rem',
-              borderBlock: '1px solid var(--border-primary)'
-            }}>
-              <div className="container" style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                gap: '2rem',
-                textAlign: 'center'
-              }}>
-                <div>
-                  <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--brand-primary)', fontFamily: 'var(--font-heading)' }}>100%</div>
-                  <p style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>Established Roots</p>
-                </div>
-                <div>
-                  <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--brand-secondary)', fontFamily: 'var(--font-heading)' }}>Clean</div>
-                  <p style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>Thoughtful Ingredients</p>
-                </div>
-                <div>
-                  <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--brand-primary)', fontFamily: 'var(--font-heading)' }}>5.0★</div>
-                  <p style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>Etsy Shop Rating</p>
-                </div>
-                <div>
-                  <div style={{ fontSize: '2rem', fontWeight: 700, color: 'var(--brand-secondary)', fontFamily: 'var(--font-heading)' }}>Cared</div>
-                  <p style={{ fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>Acclimated Transition</p>
-                </div>
-              </div>
-            </section>
+            {/* Shop Section (CX-First) */}
+            <ShopGrid 
+              filteredProducts={filteredProducts}
+              categoryFilter={categoryFilter}
+              setCategoryFilter={setCategoryFilter}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              setSelectedProduct={setSelectedProduct}
+            />
 
             {/* Petioles & Peptides Narrative */}
             <section className="section-pad">
@@ -234,40 +174,6 @@ function App() {
                     </svg>
                   </div>
                 </div>
-              </div>
-            </section>
-
-            {/* Signature Showcase Grid */}
-            <section className="section-pad" style={{ backgroundColor: 'var(--bg-surface)', borderBlock: '1px solid var(--border-primary)' }}>
-              <div className="container">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }} className="showcase-header">
-                  <div>
-                    <span className="science-badge">Featured Specimens</span>
-                    <h2 style={{ marginTop: '0.5rem', marginBottom: 0 }}>Signature Catalog</h2>
-                  </div>
-                  <button 
-                    onClick={() => setCurrentTab('shop')} 
-                    className="btn btn-secondary"
-                  >
-                    View All
-                  </button>
-                </div>
-
-                {filteredProducts.length > 0 ? (
-                  <div className="grid-products">
-                    {featuredProducts.map((product) => (
-                      <ProductCard 
-                        key={product.id} 
-                        product={product} 
-                        onSelect={(p) => setSelectedProduct(p)} 
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  <div style={{ textAlign: 'center', padding: '3rem 0' }}>
-                    <p style={{ color: 'var(--text-secondary)' }}>Etsy catalog empty. Please run sync to pull listings.</p>
-                  </div>
-                )}
               </div>
             </section>
 
@@ -347,147 +253,7 @@ function App() {
                 </div>
               </div>
             </section>
-
-            {/* Brand CTA */}
-            <section className="section-pad" style={{ 
-              background: 'linear-gradient(to right, var(--bg-surface), var(--bg-app))',
-              borderBlock: '1px solid var(--border-primary)',
-              textAlign: 'center'
-            }}>
-              <div className="container" style={{ maxWidth: '700px' }}>
-                <h2 style={{ marginBottom: '1rem' }}>Carefully Selected Plants & Thoughtful Serums</h2>
-                <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
-                  Explore our selection of established banana specimens, variegated orchids, and supportive copper peptide serums. Order securely via our Etsy shop.
-                </p>
-                <button 
-                  onClick={() => setCurrentTab('shop')}
-                  className="btn btn-primary"
-                  style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}
-                >
-                  Explore Our Shop
-                </button>
-              </div>
-            </section>
           </div>
-        )}
-
-        {/* ================= SHOP TAB ================= */}
-        {currentTab === 'shop' && (
-          <section className="section-pad">
-            <div className="container">
-              
-              {/* Header */}
-              <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                <span className="science-badge">Plants & Apothecary</span>
-                <h1 style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>Store Catalog</h1>
-                <p style={{ maxWidth: '650px', margin: '0 auto', fontSize: '1rem', lineHeight: 1.5 }}>
-                  Synchronized straight from our active Etsy nursery. Explore our well-rooted tropical specimens and gentle peptide serums. Checkout securely via our Etsy Share & Save link store.
-                </p>
-              </div>
-
-              {/* Filter Bar */}
-              <div className="glass-panel filter-bar" style={{
-                padding: '1.25rem 2rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '1.5rem',
-                marginBottom: '3.5rem',
-                borderRadius: 'var(--radius-md)'
-              }}>
-                
-                {/* Category Selector Tabs */}
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                  {[
-                    { id: 'all', label: 'All Catalog' },
-                    { id: 'Serums', label: 'Nourishing Serums' },
-                    { id: 'Plants', label: 'Plants & Botanicals' },
-                    { id: 'Shopify', label: 'Shopify Direct' },
-                    { id: 'Etsy', label: 'Etsy Listings' }
-                  ].map((tab) => (
-                    <button
-                      key={tab.id}
-                      onClick={() => setCategoryFilter(tab.id)}
-                      className="btn"
-                      style={{
-                        padding: '0.5rem 1.25rem',
-                        fontSize: '0.9rem',
-                        backgroundColor: categoryFilter === tab.id ? 'var(--brand-primary)' : 'transparent',
-                        color: categoryFilter === tab.id ? 'white' : 'var(--text-secondary)',
-                        minBlockSize: '36px',
-                        border: categoryFilter === tab.id ? '1px solid transparent' : '1px solid var(--border-primary)'
-                      }}
-                    >
-                      {tab.label}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Search Bar Input */}
-                <div style={{ position: 'relative', width: '300px' }} className="search-wrapper">
-                  <input 
-                    type="text" 
-                    placeholder="Search catalog..." 
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    style={{
-                      width: '100%',
-                      padding: '0.6rem 1rem 0.6rem 2.5rem',
-                      borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-primary)',
-                      backgroundColor: 'transparent',
-                      color: 'var(--text-primary)',
-                      fontSize: '0.9rem'
-                    }}
-                  />
-                  <svg 
-                    width="16" 
-                    height="16" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2.5" 
-                    style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '12px',
-                      transform: 'translateY(-50%)',
-                      color: 'var(--text-secondary)'
-                    }}
-                  >
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                  </svg>
-                </div>
-
-              </div>
-
-              {/* Products Catalog Grid */}
-              {filteredProducts.length > 0 ? (
-                <div className="grid-products">
-                  {filteredProducts.map((product) => (
-                    <ProductCard 
-                      key={product.id} 
-                      product={product} 
-                      onSelect={(p) => setSelectedProduct(p)} 
-                    />
-                  ))}
-                </div>
-              ) : (
-                <div className="glass-panel" style={{ textAlign: 'center', paddingBlock: '5rem' }}>
-                  <p style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>No items found matching your filter selection.</p>
-                  <button 
-                    onClick={() => { setSearchQuery(''); setCategoryFilter('all'); }} 
-                    className="btn btn-secondary"
-                  >
-                    Reset Filters
-                  </button>
-                </div>
-              )}
-
-            </div>
-          </section>
         )}
 
         {/* ================= SCIENCE TAB ================= */}
