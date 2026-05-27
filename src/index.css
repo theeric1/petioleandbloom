@@ -4,7 +4,7 @@
   Aesthetics: Premium, Clean, Glassmorphism, Sophisticated Typography, Responsive
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 
 /* Declare Cascade Layers */
 @layer reset, base, theme, components, utilities;
@@ -63,7 +63,7 @@
     --color-copper-dark: oklch(0.78 0.12 45);  /* Luminous warm copper */
 
     /* Font Tokens */
-    --font-heading: 'Cinzel', serif;
+    --font-heading: 'Playfair Display', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
 
     /* Layered premium shadows */
@@ -96,9 +96,8 @@
     --btn-text: oklch(0.98 0.005 85);
   }
 
-  /* --- DARK MODE SETTINGS (FOLLOWS BROWSER/SYSTEM) --- */
-  @media (prefers-color-scheme: dark) {
-    :root {
+  /* --- DARK MODE SETTINGS (MANUAL TOGGLE) --- */
+  [data-theme='dark'] {
       --brand-primary: var(--color-green-dark);
       --brand-secondary: var(--color-copper-dark);
       --brand-accent: oklch(0.78 0.12 45);
@@ -113,7 +112,6 @@
       --dialog-bg: oklch(0.1 0.005 240 / 0.95);
       --tag-bg: oklch(0.2 0.01 240 / 0.5);
       --btn-text: oklch(0.12 0.01 240);
-    }
   }
 }
 
