@@ -32,20 +32,16 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
 
   useEffect(() => {
     const dialog = dialogRef.current;
-    if (!dialog) return;
-
-    if (product) {
-      // Prevent double show errors
+    if (product && dialog) {
       if (!dialog.open) {
         dialog.showModal();
-        document.body.style.overflow = 'hidden'; // Lock background scrolling
-      }
-    } else {
-      if (dialog.open) {
-        dialog.close();
-        document.body.style.overflow = 'auto'; // Unlock background scrolling
+        document.body.style.overflow = 'hidden';
       }
     }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [product]);
 
   // Handle clicking outside the dialog box to close it
@@ -242,61 +238,22 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
 
             {/* Buy / Checkout Actions */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: 'auto', paddingTop: '0.5rem' }}>
-              {product.variantId ? (
-                <>
-                  <button
-                    onClick={() => {
-                      addProductToCart(product.variantId!);
-                      onClose();
-                    }}
-                    className="btn btn-copper"
-                    style={{
-                      width: '100%',
-                      textAlign: 'center',
-                      paddingBlock: '1rem',
-                      fontSize: '1.05rem',
-                      fontWeight: 600,
-                      border: 'none',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    Add to Cart
-                  </button>
-                  {product.link && (
-                    <a 
-                      href={product.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        textAlign: 'center',
-                        textDecoration: 'underline',
-                        color: 'var(--text-secondary)',
-                        fontSize: '0.85rem',
-                        marginTop: '0.25rem'
-                      }}
-                    >
-                      Or buy on our Etsy store
-                    </a>
-                  )}
-                </>
-              ) : (
-                <a 
-                  href={product.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-copper"
-                  style={{
-                    width: '100%',
-                    textAlign: 'center',
-                    textDecoration: 'none',
-                    paddingBlock: '1rem',
-                    fontSize: '1.05rem',
-                    fontWeight: 600
-                  }}
-                >
-                  Buy on Etsy
-                </a>
-              )}
+              <a 
+                href={product.link || 'https://petioleandbloomllc.etsy.com'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-copper"
+                style={{
+                  width: '100%',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  paddingBlock: '1rem',
+                  fontSize: '1.05rem',
+                  fontWeight: 600
+                }}
+              >
+                Buy on Etsy
+              </a>
             </div>
 
           </div>

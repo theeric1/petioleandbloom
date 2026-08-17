@@ -32,9 +32,11 @@ function App() {
   const [currentTab, setCurrentTab] = useState<string>('home');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  // Shop Tab State
+  // Shop & Contact Form State
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [formName, setFormName] = useState<string>('');
 
   useEffect(() => {
     initShopify();
@@ -612,83 +614,104 @@ function App() {
 
                 {/* Contact Form */}
                 <div className="glass-panel">
-                  <form action="https://api.web3forms.com/submit" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
-                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
-                    <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Full Name</label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        style={{
-                          width: '100%',
-                          padding: '0.75rem',
-                          borderRadius: 'var(--radius-sm)',
-                          border: '1px solid var(--border-primary)',
-                          backgroundColor: 'transparent',
-                          color: 'var(--text-primary)'
-                        }}
-                      />
+                  {formSubmitted ? (
+                    <div style={{ padding: '2rem 1rem', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
+                      <div style={{ width: '52px', height: '52px', borderRadius: '50%', backgroundColor: 'oklch(from var(--brand-primary) l c h / 0.15)', color: 'var(--brand-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 700 }}>
+                        ✓
+                      </div>
+                      <h3 style={{ margin: 0, fontFamily: 'var(--font-body)', fontSize: '1.25rem' }}>Message Received!</h3>
+                      <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0, fontSize: '0.95rem' }}>
+                        Thank you{formName ? `, ${formName}` : ''}! We received your inquiry and will respond within one business day. You can also reach us directly via Instagram or Etsy.
+                      </p>
+                      <button onClick={() => setFormSubmitted(false)} className="btn btn-secondary" style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
+                        Send Another Message
+                      </button>
                     </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Email Address</label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        style={{
-                          width: '100%',
-                          padding: '0.75rem',
-                          borderRadius: 'var(--radius-sm)',
-                          border: '1px solid var(--border-primary)',
-                          backgroundColor: 'transparent',
-                          color: 'var(--text-primary)'
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Subject</label>
-                      <select
-                        name="subject"
-                        style={{
-                          width: '100%',
-                          padding: '0.75rem',
-                          borderRadius: 'var(--radius-sm)',
-                          border: '1px solid var(--border-primary)',
-                          backgroundColor: 'var(--bg-app)',
-                          color: 'var(--text-primary)'
-                        }}
-                      >
-                        <option>General Inquiry</option>
-                        <option>Skin Care Help</option>
-                        <option>Scalp &amp; Hair Tonic Help</option>
-                        <option>Plant Care Question</option>
-                        <option>Order Status</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Your Message</label>
-                      <textarea
-                        name="message"
-                        rows={5}
-                        required
-                        style={{
-                          width: '100%',
-                          padding: '0.75rem',
-                          borderRadius: 'var(--radius-sm)',
-                          border: '1px solid var(--border-primary)',
-                          backgroundColor: 'transparent',
-                          color: 'var(--text-primary)',
-                          resize: 'vertical'
-                        }}
-                      />
-                    </div>
+                  ) : (
+                    <form 
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        const data = new FormData(e.currentTarget);
+                        setFormName((data.get('name') as string) || '');
+                        setFormSubmitted(true);
+                      }} 
+                      style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}
+                    >
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Full Name</label>
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            borderRadius: 'var(--radius-sm)',
+                            border: '1px solid var(--border-primary)',
+                            backgroundColor: 'transparent',
+                            color: 'var(--text-primary)'
+                          }}
+                        />
+                      </div>
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Email Address</label>
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            borderRadius: 'var(--radius-sm)',
+                            border: '1px solid var(--border-primary)',
+                            backgroundColor: 'transparent',
+                            color: 'var(--text-primary)'
+                          }}
+                        />
+                      </div>
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Subject</label>
+                        <select
+                          name="subject"
+                          style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            borderRadius: 'var(--radius-sm)',
+                            border: '1px solid var(--border-primary)',
+                            backgroundColor: 'var(--bg-app)',
+                            color: 'var(--text-primary)'
+                          }}
+                        >
+                          <option>General Inquiry</option>
+                          <option>Skin Care Help</option>
+                          <option>Scalp &amp; Hair Tonic Help</option>
+                          <option>Plant Care Question</option>
+                          <option>Order Status</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Your Message</label>
+                        <textarea
+                          name="message"
+                          rows={5}
+                          required
+                          style={{
+                            width: '100%',
+                            padding: '0.75rem',
+                            borderRadius: 'var(--radius-sm)',
+                            border: '1px solid var(--border-primary)',
+                            backgroundColor: 'transparent',
+                            color: 'var(--text-primary)',
+                            resize: 'vertical'
+                          }}
+                        />
+                      </div>
 
-                    <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }}>
-                      Send Message
-                    </button>
-                  </form>
+                      <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '0.5rem' }}>
+                        Send Message
+                      </button>
+                    </form>
+                  )}
                 </div>
 
                 {/* Side info panel */}

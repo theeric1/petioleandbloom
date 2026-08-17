@@ -53,8 +53,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setCurrentTab }) => 
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'shop', label: 'Shop' },
-    { id: 'science', label: 'Science & Bio-Actives' },
-    { id: 'about', label: 'Plant Care Guide' },
+    { id: 'about', label: 'Plants & Botanicals' },
+    { id: 'science', label: 'Peptides & Bio-Actives' },
     { id: 'contact', label: 'Contact' }
   ];
 
@@ -114,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setCurrentTab }) => 
         <ul style={{
           display: 'flex',
           listStyle: 'none',
-          gap: '2rem',
+          gap: '1.5rem',
           alignItems: 'center',
           margin: 0,
           padding: 0
@@ -153,42 +153,42 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setCurrentTab }) => 
               </li>
             );
           })}
+
+          {/* Instagram "Follow Us" pill right next to menu items */}
+          <li>
+            <a
+              href="https://instagram.com/petioleandbloomllc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.45rem',
+                padding: '0.35rem 0.85rem',
+                borderRadius: '50px',
+                background: 'linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+                color: 'white',
+                fontSize: '0.78rem',
+                fontWeight: 700,
+                letterSpacing: '0.02em',
+                textDecoration: 'none',
+                transition: 'opacity 0.2s ease, transform 0.2s ease',
+                boxShadow: '0 2px 8px rgba(220, 39, 67, 0.35)'
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+              <span>Follow</span>
+            </a>
+          </li>
         </ul>
 
-        {/* Theme & Social Icons Container */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginLeft: 'auto', marginRight: '1rem' }} className="nav-actions">
-           {/* Instagram "Follow Us" pill */}
-           <a
-             href="https://instagram.com/petioleandbloomllc"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Follow us on Instagram"
-             style={{
-               display: 'flex',
-               alignItems: 'center',
-               gap: '0.45rem',
-               padding: '0.35rem 0.85rem',
-               borderRadius: '50px',
-               background: 'linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
-               color: 'white',
-               fontSize: '0.78rem',
-               fontWeight: 700,
-               letterSpacing: '0.02em',
-               textDecoration: 'none',
-               transition: 'opacity 0.2s ease, transform 0.2s ease',
-               boxShadow: '0 2px 8px rgba(220, 39, 67, 0.35)'
-             }}
-             onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = '0.88'; (e.currentTarget as HTMLAnchorElement).style.transform = 'scale(1.04)'; }}
-             onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = '1'; (e.currentTarget as HTMLAnchorElement).style.transform = 'scale(1)'; }}
-           >
-             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-               <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-             </svg>
-             <span className="insta-label">Follow</span>
-           </a>
-
+        {/* Theme Actions Container */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginLeft: 'auto' }} className="nav-actions">
            {/* Theme Toggle */}
            <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} style={{ color: 'var(--text-secondary)', padding: '5px' }} aria-label="Toggle Theme">
              {theme === 'light' ? (

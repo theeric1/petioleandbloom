@@ -152,39 +152,29 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
           gap: '0.5rem'
         }}>
           <button 
-            onClick={() => onSelect(product)}
+            onClick={(e) => { e.stopPropagation(); onSelect(product); }}
             className="btn btn-secondary"
             style={{ flex: 1, padding: '0.5rem 1rem', fontSize: '0.9rem' }}
           >
             Details
           </button>
           
-          {product.variantId ? (
-            <button 
-              onClick={(e) => { e.stopPropagation(); addProductToCart(product.variantId!); }}
-              className="btn btn-copper"
-              style={{ flex: 1, padding: '0.5rem 1rem', fontSize: '0.9rem' }}
-            >
-              Add to Cart
-            </button>
-          ) : (
-            <a 
-              href={product.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="btn btn-copper"
-              style={{ 
-                flex: 1, 
-                padding: '0.5rem 1rem', 
-                fontSize: '0.9rem',
-                textAlign: 'center',
-                textDecoration: 'none'
-              }}
-            >
-              Buy on Etsy
-            </a>
-          )}
+          <a 
+            href={product.link || 'https://petioleandbloomllc.etsy.com'}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="btn btn-copper"
+            style={{ 
+              flex: 1, 
+              padding: '0.5rem 1rem', 
+              fontSize: '0.9rem',
+              textAlign: 'center',
+              textDecoration: 'none'
+            }}
+          >
+            Buy on Etsy
+          </a>
         </div>
       </div>
 
