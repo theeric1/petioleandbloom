@@ -42,7 +42,7 @@ export const ShopGrid: React.FC<ShopGridProps> = ({
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h2 style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>Store Catalog</h2>
           <p style={{ maxWidth: '650px', margin: '0 auto', fontSize: '1rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
-            Synchronized straight from our active nursery. Explore our well-rooted tropical specimens and gentle peptide serums. 
+            Everything currently available. Well-rooted plants and peptide formulas, shipped directly from our nursery.
           </p>
         </div>
 

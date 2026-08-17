@@ -1,6 +1,7 @@
 import os
 import json
 import urllib.request
+import urllib.parse
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -86,7 +87,7 @@ def fetch_shopify_products():
                     "originalPrice": f"{price_val} USD",
                     "description": clean_html_desc(prod.get('body_html', '')),
                     "image": local_image_path,
-                    "link": f"https://petioleandbloom.com/products/{prod['handle']}",
+                    "link": "https://www.etsy.com/shop/PetioleAndBloomLLC?search_query=" + urllib.parse.quote_plus(prod['title'][:50]),
                     "category": "Plants" if any(k in prod['title'].lower() for k in ["plant", "musa", "orchid", "fruit", "vine", "seed", "tree", "leaf", "cutting", "monstera"]) else "Serums",
                     "rating": 5.0,
                     "inStock": True,
@@ -144,7 +145,7 @@ def parse_etsy_csv(csv_path="EtsyListingsDownload.csv"):
                     "originalPrice": f"{price_val} USD",
                     "description": clean_html_desc(description),
                     "image": local_image_path,
-                    "link": f"https://petioleandbloomllc.etsy.com",
+                    "link": "https://www.etsy.com/shop/PetioleAndBloomLLC?search_query=" + urllib.parse.quote_plus(title[:50]),
                     "category": category,
                     "rating": 5.0,
                     "inStock": True,

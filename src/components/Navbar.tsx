@@ -99,7 +99,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setCurrentTab }) => 
             fontWeight: 700,
             fontSize: '1.4rem',
             letterSpacing: '0.05em',
-            color: 'var(--brand-primary)'
+            color: 'var(--brand-primary)',
+            marginRight: '2rem'
           }}
         >
           {/* Custom Botanical-Chemical Icon */}
@@ -107,7 +108,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setCurrentTab }) => 
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             <circle cx="12" cy="12" r="3" fill="var(--brand-primary)" />
           </svg>
-          <span className="gradient-text">Petiole & Bloom</span>
+          <span className="gradient-text" style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
+            <span>Petiole</span>
+            <span>& Bloom</span>
+          </span>
         </a>
 
         {/* Desktop Nav Links */}

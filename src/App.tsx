@@ -492,10 +492,10 @@ function App() {
             <div className="container" style={{ maxWidth: '800px' }}>
 
               <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                <span className="science-badge">After Your Order Arrives</span>
-                <h1 style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>Plant Care Guide</h1>
+                <span className="science-badge">Care & Cultivation</span>
+                <h1 style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>Plants & Botanicals</h1>
                 <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
-                  Tropical plants can be a little dramatic after shipping—even healthy ones. Here is exactly what to do from the moment the box arrives to get your plant thriving.
+                  Your new plant just traveled across the country in a box — a little drama is expected. Here is what to do from unboxing to thriving.
                 </p>
               </div>
 
@@ -503,8 +503,8 @@ function App() {
 
                 <article className="glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                   <span className="science-badge" style={{ alignSelf: 'flex-start' }}>Step 1</span>
-                  <h2>Unboxing &amp; First Assessment</h2>
-                  <p>Open the box in a warm room. Remove all packaging carefully and gently brush off any extra packing material. Check the roots—they should feel firm and moist, not mushy. Some leaf yellowing or minor drooping after transit is completely normal and not a sign of an unhealthy plant.</p>
+                  <h2>Unboxing Day</h2>
+                  <p>Open the box in a warm, well-lit room. Carefully remove all packing material and check the roots — they should feel firm and slightly moist, not mushy. A few yellow or droopy leaves after transit are completely normal and not a sign of a problem.</p>
                   <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
                     <li>Do not repot immediately—let the plant rest for at least a week first.</li>
                     <li>If leaves are wilted, place the pot in a humid spot (a bathroom counter works well) for 24–48 hours.</li>
@@ -566,8 +566,8 @@ function App() {
                         a: 'During transplanting, we inoculate root zones with beneficial endomycorrhizal fungi (Glomus species). Fungal hyphae colonize root cortical cells and extend outward, expanding effective root absorptive surface area up to 1,000-fold for phosphorus and micronutrient uptake.'
                       },
                       {
-                        q: 'How does the Live Arrival Guarantee work during winter or summer shipping?',
-                        a: 'We monitor destination weather daily. Whenever transit temperatures drop below 40°F, 72-hour heat packs and thermal insulation are automatically included at no extra cost. If carrier delays cause damage, send photos within 24 hours of delivery for an immediate replacement or full refund.'
+                        q: 'How does the Live Arrival Guarantee work?',
+                        a: 'We keep an eye on the weather at your destination. If temperatures are low enough to risk cold damage, we will include a heat pack with orders of two or more plants at no extra charge. If your plant arrives damaged due to carrier delays, send us photos within 24 hours and we will replace it or issue a full refund.'
                       }
                     ].map((faq, i, arr) => (
                       <div key={i} style={{ borderBottom: i < arr.length - 1 ? '1px solid var(--border-primary)' : 'none', paddingBottom: i < arr.length - 1 ? '1.5rem' : 0 }}>
