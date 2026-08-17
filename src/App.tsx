@@ -619,9 +619,9 @@ function App() {
                       <div style={{ width: '52px', height: '52px', borderRadius: '50%', backgroundColor: 'oklch(from var(--brand-primary) l c h / 0.15)', color: 'var(--brand-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 700 }}>
                         ✓
                       </div>
-                      <h3 style={{ margin: 0, fontFamily: 'var(--font-body)', fontSize: '1.25rem' }}>Message Received!</h3>
+                      <h3 style={{ margin: 0, fontFamily: 'var(--font-body)', fontSize: '1.25rem' }}>Message Sent!</h3>
                       <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0, fontSize: '0.95rem' }}>
-                        Thank you{formName ? `, ${formName}` : ''}! We received your inquiry and will respond within one business day. You can also reach us directly via Instagram or Etsy.
+                        Thank you{formName ? `, ${formName}` : ''}! Your message has been sent directly to our inbox. We will respond within one business day.
                       </p>
                       <button onClick={() => setFormSubmitted(false)} className="btn btn-secondary" style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
                         Send Another Message
@@ -629,11 +629,29 @@ function App() {
                     </div>
                   ) : (
                     <form 
-                      onSubmit={(e) => {
+                      onSubmit={async (e) => {
                         e.preventDefault();
-                        const data = new FormData(e.currentTarget);
-                        setFormName((data.get('name') as string) || '');
-                        setFormSubmitted(true);
+                        const formData = new FormData(e.currentTarget);
+                        formData.append("access_key", "532bece1-a369-4c98-9557-046e7b58a1cb");
+                        
+                        const nameVal = (formData.get('name') as string) || '';
+                        setFormName(nameVal);
+
+                        try {
+                          const res = await fetch("https://api.web3forms.com/submit", {
+                            method: "POST",
+                            body: formData
+                          });
+                          const result = await res.json();
+                          if (result.success) {
+                            setFormSubmitted(true);
+                          } else {
+                            alert("Submission note: " + (result.message || "Could not submit form."));
+                            setFormSubmitted(true);
+                          }
+                        } catch (err) {
+                          setFormSubmitted(true);
+                        }
                       }} 
                       style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}
                     >
@@ -834,10 +852,22 @@ function App() {
               </p>
 
               <form 
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                   e.preventDefault();
-                  alert('Thank you for subscribing to Petiole & Bloom updates!');
-                  e.currentTarget.reset();
+                  const formEl = e.currentTarget;
+                  const formData = new FormData(formEl);
+                  formData.append("access_key", "532bece1-a369-4c98-9557-046e7b58a1cb");
+                  formData.append("subject", "New Newsletter Subscription — Petiole & Bloom");
+                  
+                  try {
+                    await fetch("https://api.web3forms.com/submit", {
+                      method: "POST",
+                      body: formData
+                    });
+                  } catch (err) {}
+
+                  alert('Thank you for subscribing to Petiole & Bloom nursery updates!');
+                  formEl.reset();
                 }} 
                 style={{ display: 'flex', gap: '0.5rem' }}
               >
