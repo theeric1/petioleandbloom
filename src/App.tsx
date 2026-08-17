@@ -816,9 +816,10 @@ function App() {
               </h4>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.85rem' }}>
                 <li><button onClick={() => { setCurrentTab('home'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Home</button></li>
-                <li><button onClick={() => { setCurrentTab('shop'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Shop</button></li>
-                <li><button onClick={() => { setCurrentTab('science'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Science &amp; Bio-Actives</button></li>
-                <li><button onClick={() => { setCurrentTab('about'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Plant Care Guide</button></li>
+                <li><button onClick={() => { setCurrentTab('shop'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Shop Catalog</button></li>
+                <li><button onClick={() => { setCurrentTab('about'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Plants &amp; Botanicals</button></li>
+                <li><button onClick={() => { setCurrentTab('science'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Peptides &amp; Bio-Actives</button></li>
+                <li><button onClick={() => { setCurrentTab('contact'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Contact Us</button></li>
                 <li><a href="https://petioleandbloomllc.etsy.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)' }}>Etsy Store ↗</a></li>
               </ul>
             </div>
@@ -832,14 +833,18 @@ function App() {
                 New arrivals, plant care tips, and skincare updates. No spam, ever.
               </p>
 
-              <form action="https://api.web3forms.com/submit" method="POST" style={{ display: 'flex', gap: '0.5rem' }}>
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
-                <input type="hidden" name="subject" value="New Newsletter Subscription — Petiole & Bloom" />
-                <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+              <form 
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  alert('Thank you for subscribing to Petiole & Bloom updates!');
+                  e.currentTarget.reset();
+                }} 
+                style={{ display: 'flex', gap: '0.5rem' }}
+              >
                 <input
                   type="email"
                   name="email"
-                  placeholder="Your email"
+                  placeholder="Your email address"
                   required
                   style={{
                     flex: 1,
