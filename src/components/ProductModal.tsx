@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { addProductToCart } from '../lib/ShopifyManager';
 
 interface Product {
   id: string;

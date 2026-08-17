@@ -632,6 +632,13 @@ function App() {
                       onSubmit={async (e) => {
                         e.preventDefault();
                         const formData = new FormData(e.currentTarget);
+                        
+                        // Honeypot check: If botcheck is filled, drop submission silently
+                        if (formData.get('botcheck')) {
+                          setFormSubmitted(true);
+                          return;
+                        }
+
                         formData.append("access_key", "532bece1-a369-4c98-9557-046e7b58a1cb");
                         
                         const nameVal = (formData.get('name') as string) || '';
@@ -655,6 +662,8 @@ function App() {
                       }} 
                       style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}
                     >
+                      {/* Anti-Spam Honeypot Field */}
+                      <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
                       <div>
                         <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '0.4rem' }}>Full Name</label>
                         <input
@@ -856,6 +865,14 @@ function App() {
                   e.preventDefault();
                   const formEl = e.currentTarget;
                   const formData = new FormData(formEl);
+
+                  // Honeypot anti-spam check
+                  if (formData.get('botcheck')) {
+                    alert('Thank you for subscribing to Petiole & Bloom nursery updates!');
+                    formEl.reset();
+                    return;
+                  }
+
                   formData.append("access_key", "532bece1-a369-4c98-9557-046e7b58a1cb");
                   formData.append("subject", "New Newsletter Subscription — Petiole & Bloom");
                   
@@ -871,6 +888,8 @@ function App() {
                 }} 
                 style={{ display: 'flex', gap: '0.5rem' }}
               >
+                {/* Anti-Spam Honeypot Field */}
+                <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
                 <input
                   type="email"
                   name="email"
