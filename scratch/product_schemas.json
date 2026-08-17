@@ -1,0 +1,968 @@
+[
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-Vanilla-V2,Vanilla-V3,Vanilla-V1",
+    "name": "Variegated Vanilla Orchid (Chartreuse) \u2014 *Vanilla Variegata Planifolia* \u2014 3\u2033 Pot",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-variegated_vanilla_orchid__cha-1.jpg"
+    ],
+    "description": "CHARTREUSE VARIEGATED VANILLA ORCHID Vanilla planifolia \u2014 3\u2033 Pot  \ud83c\udf81 WELCOME KIT INCLUDED  Our Welcome Kit includes helpful supplies and guidance to support your new vanilla orchid through its first several months.  This uncommon chartreuse-variegated form of the real vanilla orchid features green le",
+    "sku": "etsy-csv-Vanilla-V2,Vanilla-V3,Vanilla-V1",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4545071879/variegated-vanilla-orchid-chartreuse",
+      "priceCurrency": "USD",
+      "price": "27.95",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-Vanilla-X1,Vanilla-X2",
+    "name": "Vanilla Orchid | Actual Vanilla Bean Plant",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-vanilla_orchid___actual_vanill-2.jpg"
+    ],
+    "description": "Vanilla planifolia \u2014 Real Vanilla Orchid (3\u2033 Pot)  \ud83c\udf81 Welcome Kit included to help you through the first several months!  We are glad to substitute a super variegated orchid in a multipack if you like, just message right when you order as we sometimes pack an ship in very short order!   Why it\u2019s awes",
+    "sku": "etsy-csv-Vanilla-X1,Vanilla-X2",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4400333080/vanilla-orchid-actual-vanilla-bean-plant",
+      "priceCurrency": "USD",
+      "price": "22.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-csv-3",
+    "name": "Pink Lemonade Blueberry plant, well rooted. 3\" Pot",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-pink_lemonade_blueberry_plant_-3.jpg"
+    ],
+    "description": "\ud83c\udf4b\ud83e\uded0 Pink Lemonade Blueberry Vaccinium \u2018Pink Lemonade\u2019  An uncommon blueberry variety producing luminous pink fruit instead of traditional blue. Elegant, sweet, and visually striking, Pink Lemonade offers refined flavor with true ornamental presence.  Equally suited for curated patio containers, edibl",
+    "sku": "etsy-csv-csv-3",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4460610568/pink-lemonade-blueberry-plant-well",
+      "priceCurrency": "USD",
+      "price": "18.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-VanillaSV-X1,VanillaSV-X2",
+    "name": "Vanilla Super Variegated Orchid | Actual Vanilla Bean Plant",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-vanilla_super_variegated_orchi-4.jpg"
+    ],
+    "description": "Vanilla planifolia \u2018Super Variegated\u2019 \u2014 3\u2033 Pot  \ud83c\udf81 Welcome Kit included to help you through the first several months  ** Mix and Match, choose 2 or 3 and email with your preferred plants.    Why it\u2019s awesome \ud83c\udf3f Striking cream-and-green foliage\u2014every plant is uniquely patterned \ud83e\uded8 Yes, vanilla beans are",
+    "sku": "etsy-csv-VanillaSV-X1,VanillaSV-X2",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4400348075/vanilla-super-variegated-orchid-actual",
+      "priceCurrency": "USD",
+      "price": "19.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-csv-5",
+    "name": "Passion Fruit 2-Pack \u2014 Panama Red & Bounty (Passiflora edulis) \u2014 Quick to Flower/Fruit!",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-passion_fruit_2-pack___panama_-5.jpg"
+    ],
+    "description": "\ud83c\udf47 Passion Fruit 2-Pack \u2014 Panama Red & Bounty (Passiflora edulis)  \ud83e\udef6Our Panama Red vine FLOWERED in just 3 MONTHS and fruited right after! Follow our advice and yours can too!  The flowers in the images are from our Panama Red plant this past summer.  Two beautiful passionfruit vines that work wonder",
+    "sku": "etsy-csv-csv-5",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4441953797/passion-fruit-2-pack-panama-red-bounty",
+      "priceCurrency": "USD",
+      "price": "24.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-POPOULU-X2,POPOULU-X1,POPOULU-X3",
+    "name": "Popoulu Banana Plant (Musa \u2018Popoulu\u2019) \u2014 Red Trunk Polynesian Tropical Fruit & Foliage",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-popoulu_banana_plant__musa__po-6.jpg"
+    ],
+    "description": "\ud83c\udf4c Popoulu Banana Plant (Musa Popoulu) \u2014 Red Trunk, Tropical Fruit & Foliage  A stunning Pacific Island banana with a vivid red pseudostem, lush tropical leaves, and the potential to produce short, plump, richly flavored bananas with salmon-pink or pinkish-blush pulp. Musa \u2018Popoulu\u2019 blends dramatic o",
+    "sku": "etsy-csv-POPOULU-X2,POPOULU-X1,POPOULU-X3",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4441956426/popoulu-banana-plant-musa-popoulu-red",
+      "priceCurrency": "USD",
+      "price": "21.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-GREEN-X1,GREEN-X2,GREEN-X3",
+    "name": "Dwarf Green Banana Plant \u2013 Tropical Foliage, Edible Orange Fruit",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-dwarf_green_banana_plant___tro-7.jpg"
+    ],
+    "description": "\ud83c\udf4c Dwarf Green Banana Plant (Musa \u2018Dwarf Green\u2019) \u2014 Sturdy Tropical Foliage & Edible A lush, tropical dwarf banana with extremely thick deep green leaves and a compact, striking form that makes it a standout in any plant collection. Musa \u2018Dwarf Green\u2019 brings bold tropical energy to patios, sunny windo",
+    "sku": "etsy-csv-GREEN-X1,GREEN-X2,GREEN-X3",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4441947253/rare-dwarf-green-banana-plant-musa-dwarf",
+      "priceCurrency": "USD",
+      "price": "24.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-csv-8",
+    "name": "Springhigh Blueberry, well rooted in 3\" Pot.",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-springhigh_blueberry__well_roo-8.jpg"
+    ],
+    "description": "\ud83c\udf53\ud83c\udf38 Spring High Blueberry Vaccinium \u2018Spring High\u2019  A refined early-season Southern Highbush blueberry known for its vigorous growth, abundant yields, and beautifully balanced flavor. Spring High delivers dependable performance with ornamental elegance \u2014 ideal for both productive gardens and polished",
+    "sku": "etsy-csv-csv-8",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4464799596/springhigh-blueberry-well-rooted-in-3",
+      "priceCurrency": "USD",
+      "price": "18.95",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-csv-9",
+    "name": "White Jade (edible core) Pineapple Plant, well rooted, 3\" Pot",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-white_jade__edible_core__pinea-9.jpg"
+    ],
+    "description": "\ud83c\udf4d\ud83e\udd0d White Jade Pineapple Ananas comosus \u2018White Jade\u2019  A rare, low-acid pineapple prized for its exceptionally sweet flavor and smooth, nearly fiberless texture. White Jade offers refined tropical character in a compact, container-friendly form \u2014 both ornamental and delicious.  Equally suited for pati",
+    "sku": "etsy-csv-csv-9",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4464802922/white-jade-edible-core-pineapple-plant",
+      "priceCurrency": "USD",
+      "price": "18.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-LAKATAN-X1,LAKATAN-X2,LAKATAN-X3",
+    "name": "Lakatan \u201cGolden\u201d Banana Plant (Lacatan) | Premier Dessert Banana | Sweet, Creamy, Custardy | 3\" pot | Well Established",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-lakatan__golden__banana_plant_-10.jpg"
+    ],
+    "description": "\ud83c\udf4c\u2728 PREMIER DESSERT BANANA \u2014 LAKATAN (LACATAN) \u2705 SWEET + AROMATIC \u2022 Creamy, dessert-like texture (\u201ccustardy\u201d when perfectly ripe) \ud83e\udeb4 LIVE PLANT: Well-rooted starter established in a 3\" pot \ud83d\udce6 ARRIVAL TIP: WATER ON ARRIVAL + GRADUAL SUN TRANSITION  Lakatan is a beloved dessert banana variety best known",
+    "sku": "etsy-csv-LAKATAN-X1,LAKATAN-X2,LAKATAN-X3",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4433887165/lakatan-golden-banana-plant-lacatan-o",
+      "priceCurrency": "USD",
+      "price": "18.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-DEFY-A30,DEFY-30",
+    "name": "Copper Peptide Serum (GHK-Cu) | Effective Skincare | Anti-Aging Peptide | Niacinamide + HA + Licorice | Fragrance-Free | 30 mL",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-copper_peptide_serum__ghk-cu__-11.jpg"
+    ],
+    "description": "DEFY \u2014 Copper Peptide Face Serum (30 mL) \u2728 Visibly smoother texture. More even-looking tone. Refined pores.  DEFY is an EFFECTIVE, fragrance-free copper peptide (GHK-Cu) serum designed to support the look of healthy skin as it ages\u2014especially skin impacted by daily sun exposure and environmental str",
+    "sku": "etsy-csv-DEFY-A30,DEFY-30",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4431887129/copper-peptide-serum-ghk-cu-anti-aging",
+      "priceCurrency": "USD",
+      "price": "49.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-MusaTruly-X1,MusaTruly-X3,MusaTruly-X2,MusaTruly-4in",
+    "name": "Truly Tiny Banana Plant | Dwarf Musa Edible Fruit Producing (3\" Pot)",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-truly_tiny_banana_plant___dwar-12.jpg"
+    ],
+    "description": "\ud83c\udf4c Truly Tiny Banana Plant (Musa \u2018Truly Tiny\u2019) \u2014 Compact Fruit Producing  A dwarf banana with lush, deep green leaves that stay darker than most varieties. Perfect for sunny windows, patios, or greenhouse collections, it reaches only 2\u20133 feet tall at maturity yet still produces small, edible bananas.",
+    "sku": "etsy-csv-MusaTruly-X1,MusaTruly-X3,MusaTruly-X2,MusaTruly-4in",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4399900218/truly-tiny-banana-plant-dwarf-musa",
+      "priceCurrency": "USD",
+      "price": "19.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-Banana4pl",
+    "name": "Banana Bunch | 4 Unique Musa Plants | Truly Tiny + Popo'ulu + Dwarf Green + Lakatan (Substitutions Permitted)",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-banana_bunch___4_unique_musa_p-13.jpg"
+    ],
+    "description": "A curated and established/well-rooted Banana Bunch featuring four uncommon Musa varieties (you won't find in the store) \u2014 perfect for collectors and tropical plant lovers \ud83c\udf3f\ud83c\udf4c   What You\u2019ll Receive:  \u2022 4 established banana plants (one of each variety listed) \u2022 Grown in 3-inch nursery pots \u2022 Strong, he",
+    "sku": "etsy-csv-Banana4pl",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4466696994/banana-bunch-4-unique-musa-plants",
+      "priceCurrency": "USD",
+      "price": "49.99",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
+  {
+    "@type": "Product",
+    "@id": "https://petioleandbloom.com/#product-etsy-csv-csv-14",
+    "name": "Musa Florida, Variegated Banana - US Seller - WELL ROOTED",
+    "image": [
+      "https://petioleandbloom.com/images/products/etsy-musa_florida__variegated_banan-14.jpg"
+    ],
+    "description": "\ud83c\udf4c\ud83e\udd0d Variegated Banana Plant Musa sp. (Variegated)  A rare, collector-grade variegated Musa featuring bold white striping and marbled sectoring across lush green, paddle-shaped leaves. The photos show classic banana growth traits \u2014 a developing pseudostem with tightly rolled \u201ccigar\u201d leaves that unfurl",
+    "sku": "etsy-csv-csv-14",
+    "brand": {
+      "@type": "Brand",
+      "name": "Petiole & Bloom"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://petioleandbloomllc.etsy.com/listing/4547082907/musa-florida-variegated-banana-us",
+      "priceCurrency": "USD",
+      "price": "99.0",
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Petiole & Bloom LLC"
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "US",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0.00",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "US"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 4,
+            "unitCode": "DAY"
+          }
+        }
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "48",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  }
+]

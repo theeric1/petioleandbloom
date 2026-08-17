@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://petioleandbloom.com/</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-variegated_vanilla_orchid__cha-1.jpg</image:loc>
+      <image:title>Variegated Vanilla Orchid (Chartreuse) — *Vanilla Variegata Planifolia* — 3″ Pot</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-vanilla_orchid___actual_vanill-2.jpg</image:loc>
+      <image:title>Vanilla Orchid | Actual Vanilla Bean Plant</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-pink_lemonade_blueberry_plant_-3.jpg</image:loc>
+      <image:title>Pink Lemonade Blueberry plant, well rooted. 3" Pot</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-vanilla_super_variegated_orchi-4.jpg</image:loc>
+      <image:title>Vanilla Super Variegated Orchid | Actual Vanilla Bean Plant</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-passion_fruit_2-pack___panama_-5.jpg</image:loc>
+      <image:title>Passion Fruit 2-Pack — Panama Red &amp; Bounty (Passiflora edulis) — Quick to Flower/Fruit!</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-popoulu_banana_plant__musa__po-6.jpg</image:loc>
+      <image:title>Popoulu Banana Plant (Musa ‘Popoulu’) — Red Trunk Polynesian Tropical Fruit &amp; Foliage</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-dwarf_green_banana_plant___tro-7.jpg</image:loc>
+      <image:title>Dwarf Green Banana Plant – Tropical Foliage, Edible Orange Fruit</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-springhigh_blueberry__well_roo-8.jpg</image:loc>
+      <image:title>Springhigh Blueberry, well rooted in 3" Pot.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-white_jade__edible_core__pinea-9.jpg</image:loc>
+      <image:title>White Jade (edible core) Pineapple Plant, well rooted, 3" Pot</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-lakatan__golden__banana_plant_-10.jpg</image:loc>
+      <image:title>Lakatan “Golden” Banana Plant (Lacatan) | Premier Dessert Banana | Sweet, Creamy, Custardy | 3" pot | Well Established</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-copper_peptide_serum__ghk-cu__-11.jpg</image:loc>
+      <image:title>Copper Peptide Serum (GHK-Cu) | Effective Skincare | Anti-Aging Peptide | Niacinamide + HA + Licorice | Fragrance-Free | 30 mL</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-truly_tiny_banana_plant___dwar-12.jpg</image:loc>
+      <image:title>Truly Tiny Banana Plant | Dwarf Musa Edible Fruit Producing (3" Pot)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-banana_bunch___4_unique_musa_p-13.jpg</image:loc>
+      <image:title>Banana Bunch | 4 Unique Musa Plants | Truly Tiny + Popo'ulu + Dwarf Green + Lakatan (Substitutions Permitted)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://petioleandbloom.com/images/products/etsy-musa_florida__variegated_banan-14.jpg</image:loc>
+      <image:title>Musa Florida, Variegated Banana - US Seller - WELL ROOTED</image:title>
+    </image:image>
   </url>
 </urlset>
