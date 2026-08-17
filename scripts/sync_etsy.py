@@ -43,6 +43,7 @@ def clean_html_desc(html_content):
     text = re.sub(r'<br\s*/?>', '\n', text)
     text = re.sub(r'</p>', '\n\n', text)
     text = re.sub(r'<[^>]+>', '', text)
+    text = re.sub(r'\*\*\*\s*Our longer vines have all sold out[^\n]*\n*', '', text, flags=re.IGNORECASE)
     text = re.sub(r'\n{3,}', '\n\n', text)
     return text.strip()
 
