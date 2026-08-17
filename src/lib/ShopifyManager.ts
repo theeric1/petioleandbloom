@@ -1,10 +1,7 @@
-// @ts-ignore
-import ShopifyBuy from '@shopify/buy-button-js';
-
 let uiInstance: any = null;
 let cartInstance: any = null;
 
-export const initShopify = () => {
+export const initShopify = async () => {
   if (uiInstance) return; // Already initialized
 
   const domain = import.meta.env.VITE_SHOPIFY_DOMAIN || 'your-shop-name.myshopify.com';
@@ -12,32 +9,37 @@ export const initShopify = () => {
 
   // Only initialize if we have real tokens (prevents crashing during development if not set)
   if (domain === 'your-shop-name.myshopify.com') {
-    console.warn("Shopify Buy Button missing credentials in .env. Cart will not render.");
     return;
   }
 
-  const client = ShopifyBuy.buildClient({
-    domain,
-    storefrontAccessToken,
-  });
+  try {
+    // @ts-ignore
+    const { default: ShopifyBuy } = await import('@shopify/buy-button-js');
+    const client = ShopifyBuy.buildClient({
+      domain,
+      storefrontAccessToken,
+    });
 
-  uiInstance = ShopifyBuy.UI.init(client);
-  
-  // We initialize a hidden cart so it's ready to slide out
-  uiInstance.createComponent('cart', {
-    options: {
-      cart: {
-        styles: {
-          button: {
-            'background-color': '#d17a41', // Copper brand color
-            ':hover': { 'background-color': '#a55d31' }
+    uiInstance = ShopifyBuy.UI.init(client);
+    
+    // We initialize a hidden cart so it's ready to slide out
+    uiInstance.createComponent('cart', {
+      options: {
+        cart: {
+          styles: {
+            button: {
+              'background-color': '#d17a41', // Copper brand color
+              ':hover': { 'background-color': '#a55d31' }
+            }
           }
         }
       }
-    }
-  }).then((cart: any) => {
-    cartInstance = cart;
-  });
+    }).then((cart: any) => {
+      cartInstance = cart;
+    });
+  } catch (err) {
+    console.warn("Could not dynamically load Shopify SDK", err);
+  }
 };
 
 export const addProductToCart = (variantId: string, quantity: number = 1) => {
