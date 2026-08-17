@@ -7,6 +7,22 @@ from bs4 import BeautifulSoup
 import re
 import csv
 
+# Load Etsy listing ID map for share & save links
+ETSY_LISTING_MAP = {}
+_map_path = os.path.join(os.path.dirname(__file__), 'etsy_listing_map.json')
+if os.path.exists(_map_path):
+    with open(_map_path, 'r') as _f:
+        ETSY_LISTING_MAP = json.load(_f)
+
+def get_etsy_share_link(title):
+    """Match a product title to its Etsy share & save link using the listing map."""
+    title_lower = title.lower()
+    for keyword, listing_path in ETSY_LISTING_MAP.items():
+        if keyword.lower() in title_lower:
+            return f"https://petioleandbloomllc.etsy.com/listing/{listing_path}"
+    # Fallback to shop page
+    return "https://petioleandbloomllc.etsy.com"
+
 # Ensure folders exist
 os.makedirs("public/images/products", exist_ok=True)
 os.makedirs("src/data", exist_ok=True)
@@ -87,7 +103,7 @@ def fetch_shopify_products():
                     "originalPrice": f"{price_val} USD",
                     "description": clean_html_desc(prod.get('body_html', '')),
                     "image": local_image_path,
-                    "link": "https://www.etsy.com/shop/PetioleAndBloomLLC?search_query=" + urllib.parse.quote_plus(prod['title'][:50]),
+                    "link": get_etsy_share_link(prod['title']),
                     "category": "Plants" if any(k in prod['title'].lower() for k in ["plant", "musa", "orchid", "fruit", "vine", "seed", "tree", "leaf", "cutting", "monstera"]) else "Serums",
                     "rating": 5.0,
                     "inStock": True,
@@ -145,7 +161,7 @@ def parse_etsy_csv(csv_path="EtsyListingsDownload.csv"):
                     "originalPrice": f"{price_val} USD",
                     "description": clean_html_desc(description),
                     "image": local_image_path,
-                    "link": "https://www.etsy.com/shop/PetioleAndBloomLLC?search_query=" + urllib.parse.quote_plus(title[:50]),
+                    "link": get_etsy_share_link(title),
                     "category": category,
                     "rating": 5.0,
                     "inStock": True,
@@ -226,7 +242,7 @@ def parse_etsy_rss():
                 "originalPrice": original_price or f"{price_val} USD",
                 "description": description_text,
                 "image": local_image_path,
-                "link": f"https://petioleandbloomllc.etsy.com/listing/{listing_id}",
+                "link": f"https://petioleandbloomllc.etsy.com/listing/{listing_id}/" + re.sub(r'\?.*$', '', link.split('/')[-1]) if listing_id_match else get_etsy_share_link(title),
                 "category": "Plants" if any(k in title.lower() for k in ["plant", "musa", "orchid", "fruit", "vine", "seed", "tree", "leaf", "cutting", "monstera"]) else "Serums",
                 "rating": 5.0,
                 "inStock": True,
@@ -247,16 +263,33 @@ def main():
     etsy_rss_products = parse_etsy_rss()
     etsy_csv_products = parse_etsy_csv()
     
-    # Merge, preferring Shopify and RSS over CSV to avoid duplicates if titles match loosely
+    # Merge with fuzzy dedup: normalize titles to catch near-duplicates across platforms
     all_products = []
-    seen_titles = set()
-    
-    for prod_list in [shopify_products, etsy_rss_products, etsy_csv_products]:
+    seen_keys = set()
+
+    def normalize_title(t):
+        """Strip common noise from titles for dedup matching."""
+        t = t.lower().strip()
+        # Remove common words/phrases that differ between platforms
+        for noise in ['| ', '— ', '- ', '– ', '3" pot', '3\" pot', '3\u201d pot',
+                       'well established', 'well rooted', 'us seller',
+                       'live plant', 'premier dessert banana',
+                       'sweet, creamy, custardy', 'actual vanilla bean plant',
+                       'dwarf fruit-producing', 'edible fruit producing',
+                       'extremely rare', 'tropical foliage', 'edible orange fruit',
+                       'red trunk polynesian tropical fruit & foliage',
+                       'quick to flower/fruit!', '(3" pot)',
+                       'dwarf musa', 'musa']:
+            t = t.replace(noise.lower(), '')
+        t = re.sub(r'[^a-z0-9]', '', t)  # strip all non-alphanumeric
+        return t[:20]  # compare first 20 chars of normalized form
+
+    for prod_list in [etsy_csv_products, etsy_rss_products, shopify_products]:
         for prod in prod_list:
-            t = prod['title'].lower()
-            if t not in seen_titles:
+            key = normalize_title(prod['title'])
+            if key not in seen_keys:
                 all_products.append(prod)
-                seen_titles.add(t)
+                seen_keys.add(key)
     
     output_path = "src/data/products.json"
     with open(output_path, "w", encoding="utf-8") as f:
