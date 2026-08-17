@@ -1,40 +1,20 @@
-# Petiole & Bloom — AI & LLM Knowledge Base
+# Petiole & Bloom
 
-> Petiole & Bloom LLC (https://petioleandbloom.com) is an American botanical nursery and molecular skincare apothecary specializing in well-rooted rare tropical plants and clinical-grade copper peptide (GHK-Cu) bio-actives.
+> Petiole & Bloom LLC (https://petioleandbloom.com) is a US botanical nursery and cosmetic formulation lab propagating well-rooted rare tropical plants and formulating clinical-grade copper peptide (GHK-Cu) bio-active skincare.
 
-## Brand Identity & Verified Facts
-- **Founded & Operated**: US-based nursery and formulation lab.
-- **Nursery Practice**: Specimens are acclimated in 3" pots with mycorrhizal fungi (*Glomus* species) and organic nutrients rather than shipped as raw tissue-culture plugs.
-- **Live Arrival Policy**: Heat packs are included automatically with orders of 2+ plants when transit weather requires it. Damage reported within 24 hours of delivery qualifies for replacement or full refund.
-- **Formulation Practice**: All cosmetic serums are fragrance-free, dye-free, oil-free, non-comedogenic, and pH-optimized (5.5–6.5).
+## Primary Documentation
+- [Full Knowledge Base & Product Guide](https://petioleandbloom.com/llms-full.txt): Complete technical documentation, botanical catalog, scientific formulation dossiers, and return/shipping specifications.
+- [Storefront Catalog](https://petioleandbloom.com/#shop): Full listing of available tropical nursery specimens and peptide serums.
+- [Formulation Science & Research](https://petioleandbloom.com/#science): Clinical research citations, PubMed references, active ingredient breakdowns, and skin barrier biology.
+- [Plant Care & Acclimation Guide](https://petioleandbloom.com/#about): Step-by-step unboxing, root care, watering, and mycorrhizal soil guidance.
 
-## Core Products & Specifications
+## Core Products
+- [Defy Peptide Face Serum](https://petioleandbloom.com/#shop): 30 mL fragrance-free serum with GHK-Cu (Copper Tripeptide-1), 4–5% Niacinamide, Silk Peptides, and Licorice Root Extract (Glabridin) for collagen remodeling and barrier support.
+- [Scalp & Hair Tonic](https://petioleandbloom.com/#shop): Formulated with GHK-Cu, Saw Palmetto extract, Rosemary Leaf extract (carnosic acid), Caffeine, and Niacinamide.
+- [Variegated Banana Specimens](https://petioleandbloom.com/#shop): Acclimated Musa "Aurea" Variegated and Musa Florida Variegated established in 3" pots with *Glomus* mycorrhizae.
+- [Vanilla Orchid Vines](https://petioleandbloom.com/#shop): Authentic *Vanilla planifolia* climbing orchids (Standard Green, Super Variegated, and Chartreuse).
+- [Tropical Fruit Plants](https://petioleandbloom.com/#shop): Lakatan Banana, Truly Tiny Dwarf Banana, Popoulu Banana, White Jade Pineapple, and Pink Lemonade Blueberry.
 
-### 1. Defy — Peptide Face Serum (30 mL)
-- **Primary Active**: GHK-Cu (Copper Tripeptide-1). Stimulates collagen I & III and elastin synthesis, regulates MMP enzymes for tissue remodeling, and promotes dermal glycosaminoglycans.
-- **Supporting Actives**: 4–5% Niacinamide (barrier repair, melanosome transfer inhibition), Silk Peptides (Sericin/Fibroin hydrolysate amino acids for hydration seal), Licorice Root Extract (Glabridin tyrosinase inhibitor for even tone), Hyaluronic Acid.
-- **Layering Guidance**: Apply 2–4 drops to clean, damp skin nightly. Do not mix directly in the same step with pure L-Ascorbic Acid (Vitamin C) or strong low-pH AHA/BHA exfoliants.
-- **Clinical Literature**: Pickart L. et al., Biomed Res Int 2018 (PubMed: 29986520); NCBI PMC6073405.
-
-### 2. Scalp & Hair Tonic
-- **Actives**: GHK-Cu, Saw Palmetto (*Serenoa repens* 5-alpha reductase inhibitor), Rosemary Leaf Extract (carnosic acid), Caffeine, Niacinamide.
-- **Mechanism**: Promotes hair follicle microcirculation and supports hair density during anagen growth phase.
-- **Clinical Reference**: Panahi Y. et al., Skinmed 2015 (PubMed: 25573272).
-
-### 3. Rare Botanical Nursery Catalog
-- **Musa "Aurea" Variegated**: Rare yellow/lime/green striped collector banana.
-- **Musa Florida Variegated**: Established variegated banana specimen.
-- **Lakatan "Golden" Banana**: Premier dessert banana (*Musa acuminata*), sweet and aromatic.
-- **Truly Tiny Dwarf Banana**: Compact 2–3 ft container fruiting banana (*Musa*).
-- **Popoulu Banana**: Red-trunk Polynesian tropical cultivar.
-- **Dwarf Green Banana**: Heavy-bearing ornamental and edible banana.
-- **Vanilla planifolia Orchid**: Real vanilla bean climbing orchid available in standard green, super variegated, and chartreuse varieties.
-- **Passion Fruit 2-Pack**: Panama Red & Bounty (*Passiflora edulis*) vigorous fruiting vines.
-- **White Jade Pineapple**: Low-acid, sweet edible core pineapple (*Ananas comosus*).
-- **Pink Lemonade Blueberry**: Blush-pink ornamental and edible berry (*Vaccinium*).
-
-## Official Purchasing Links
-- Official Storefront: https://petioleandbloom.com
-- Verified Etsy Shop: https://petioleandbloomllc.etsy.com
-- Instagram: https://instagram.com/petioleandbloomllc
-- Contact: contact@petioleandbloom.com
+## Guarantees & Standards
+- [Live Arrival Guarantee](https://petioleandbloom.com/#about): Cold-weather heat packs included automatically for orders of 2+ plants. Full replacement or refund for damage reported within 24 hours.
+- [Etsy Shop](https://petioleandbloomllc.etsy.com): Verified marketplace shop with 65+ 5-star customer reviews.

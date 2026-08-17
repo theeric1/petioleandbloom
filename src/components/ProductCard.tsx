@@ -23,7 +23,7 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) => {
   return (
-    <article className="product-card" style={{ height: '100%' }} itemScope itemType="https://schema.org/Product">
+    <article className="product-card" style={{ height: '100%' }}>
       {/* Product Image Wrapper */}
       <div style={{ position: 'relative', overflow: 'hidden', cursor: 'pointer' }} onClick={() => onSelect(product)}>
         {/* Featured Tag */}
@@ -50,7 +50,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
           backgroundColor: 'var(--bg-surface)',
           backdropFilter: 'blur(6px)',
           WebkitBackdropFilter: 'blur(6px)'
-        }} itemProp="category">
+        }}>
           {product.category}
         </span>
 
@@ -59,7 +59,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
           alt={product.title} 
           loading="lazy"
           className="product-card-image"
-          itemProp="image"
           onError={(e) => {
             // Fallback for missing images
             (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=600';
@@ -90,11 +89,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
             <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{product.rating.toFixed(1)}</span>
           </div>
           
-          {/* Price & Microdata Offer */}
-          <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
-            <meta itemProp="priceCurrency" content="USD" />
-            <meta itemProp="price" content={product.price.toString()} />
-            <link itemProp="availability" href="https://schema.org/InStock" />
+          {/* Price */}
+          <div>
             <span style={{
               fontSize: '1.2rem',
               fontWeight: 700,
@@ -107,7 +103,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
 
         {/* Product Title */}
         <h3 
-          itemProp="name"
           onClick={() => onSelect(product)}
           style={{
             fontFamily: 'var(--font-body)',

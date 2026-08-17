@@ -11,7 +11,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-VAN-CHAR-3IN"
   },
   {
     "id": "etsy-csv-Vanilla-X1,Vanilla-X2",
@@ -25,7 +26,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-VAN-PLAN-3IN"
   },
   {
     "id": "etsy-csv-csv-3",
@@ -39,7 +41,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-BLU-PLEM-3IN"
   },
   {
     "id": "etsy-csv-VanillaSV-X1,VanillaSV-X2",
@@ -53,7 +56,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-VAN-SVAR-3IN"
   },
   {
     "id": "etsy-csv-csv-5",
@@ -67,7 +71,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-PAS-2PK-3IN"
   },
   {
     "id": "etsy-csv-POPOULU-X2,POPOULU-X1,POPOULU-X3",
@@ -81,7 +86,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-POP-3IN"
   },
   {
     "id": "etsy-csv-GREEN-X1,GREEN-X2,GREEN-X3",
@@ -95,7 +101,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-DGRN-3IN"
   },
   {
     "id": "etsy-csv-csv-8",
@@ -109,7 +116,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-BLU-SPRH-3IN"
   },
   {
     "id": "etsy-csv-csv-9",
@@ -123,7 +131,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-PIN-WJAD-3IN"
   },
   {
     "id": "etsy-csv-LAKATAN-X1,LAKATAN-X2,LAKATAN-X3",
@@ -137,7 +146,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-LAK-3IN"
   },
   {
     "id": "etsy-csv-DEFY-A30,DEFY-30",
@@ -151,7 +161,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-DEFY-GHK-30ML"
   },
   {
     "id": "etsy-csv-MusaTruly-X1,MusaTruly-X3,MusaTruly-X2,MusaTruly-4in",
@@ -165,7 +176,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-TTIN-3IN"
   },
   {
     "id": "etsy-csv-Banana4pl",
@@ -179,7 +191,8 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-DGRN-3IN"
   },
   {
     "id": "etsy-csv-csv-14",
@@ -193,6 +206,7 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-FLOR-3IN"
   }
 ]
