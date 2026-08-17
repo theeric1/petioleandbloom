@@ -21,6 +21,11 @@
     <meta name="keywords" content="copper peptides, GHK-Cu, hair growth tonic, rare banana plants, variegated musa aurea, vanilla orchid, biological skincare, botanical nursery, petiole and bloom" />
     <meta name="author" content="Petiole & Bloom LLC" />
     
+    <!-- Search Engine & Crawler Directives (Googlebot & Bingbot) -->
+    <link rel="canonical" href="https://petioleandbloom.com/" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
     <!-- OpenGraph (Facebook / LinkedIn) Social Previews -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Petiole & Bloom | Molecular Apothecary & Rare Botanicals" />
@@ -35,9 +40,81 @@
     <meta name="twitter:description" content="Explore our biologically active nursery and molecular serums. Propagating rare specimens and GHK-Cu complexes." />
     <meta name="twitter:image" content="/images/products/ghk-cu-serum.jpg" />
 
-    <!-- Preconnect to Font Servers for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Structured Data (JSON-LD) for Google Search & Merchant Center -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://petioleandbloom.com/#organization",
+          "name": "Petiole & Bloom LLC",
+          "url": "https://petioleandbloom.com",
+          "logo": "https://petioleandbloom.com/images/products/shopify-9336940429555.jpg",
+          "sameAs": [
+            "https://instagram.com/petioleandbloomllc",
+            "https://petioleandbloomllc.etsy.com"
+          ],
+          "description": "Propagators of acclimated rare botanical specimens and formulators of clinical-grade copper peptide skin & hair bio-actives."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://petioleandbloom.com/#website",
+          "url": "https://petioleandbloom.com",
+          "name": "Petiole & Bloom",
+          "publisher": {
+            "@id": "https://petioleandbloom.com/#organization"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://petioleandbloom.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What are GHK-Cu Copper Peptides and how do they benefit skin and hair?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "GHK-Cu (Glycyl-L-Histidyl-L-Lysine Copper) is a naturally occurring plasma tripeptide complex. Peer-reviewed dermatological studies confirm it upregulates collagen I (COL1A1) and III, elastin, and glycosaminoglycan synthesis, while modulating matrix metalloproteinases (MMPs) for extracellular matrix remodeling. On the scalp, GHK-Cu enlarges hair follicle size and extends the anagen (growth) phase."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can copper peptide serums be layered with Vitamin C or Retinol?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Copper peptides should not be mixed directly in the same application step with acidic L-Ascorbic Acid (pure Vitamin C) or low-pH direct acids (AHAs/BHAs), as acidic pH destabilizes copper complex bonds. Alternate routines: apply Vitamin C or direct acids in the morning, and GHK-Cu serums at night. Retinol can be used on alternating evenings."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do Silk Peptides and Niacinamide support the skin barrier?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Low-molecular-weight silk peptides provide essential amino acids (serine, glycine, alanine) that constitute Natural Moisturizing Factor (NMF) in the stratum corneum, forming a breathable protective moisture film. Niacinamide (4-5%) stimulates ceramide and free fatty acid synthesis while inhibiting melanosome transfer to reduce hyperpigmentation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do Saw Palmetto and Rosemary Extract support scalp hair density?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Saw palmetto fatty acids and carnosic acid in rosemary extract act as natural 5-alpha reductase inhibitors, counteracting local conversion of testosterone to DHT at the follicle level. A 2015 randomized controlled trial showed rosemary extract achieved hair growth increases clinically equivalent to 2% minoxidil over 6 months."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why are Petiole & Bloom nursery plants established in custom soil before shipping?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Rather than shipping fragile laboratory tissue culture plugs, Petiole & Bloom establishes every plant in custom organic soil inoculated with endomycorrhizal fungi (Glomus species). Fungal hyphae expand root absorptive surface area up to 1,000-fold, minimizing shipping shock and ensuring vigorous adaptation."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <!-- Main Render Root -->

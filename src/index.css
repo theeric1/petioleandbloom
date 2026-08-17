@@ -285,6 +285,7 @@
     border: 1px solid var(--border-primary);
     padding: 0;
     transition: display 0.4s allow-discrete, overlay 0.4s allow-discrete;
+    z-index: 9999;
   }
 
   .product-dialog::backdrop {

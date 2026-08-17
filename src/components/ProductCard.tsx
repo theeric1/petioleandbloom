@@ -24,7 +24,7 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) => {
   return (
-    <article className="product-card" style={{ height: '100%' }}>
+    <article className="product-card" style={{ height: '100%' }} itemScope itemType="https://schema.org/Product">
       {/* Product Image Wrapper */}
       <div style={{ position: 'relative', overflow: 'hidden', cursor: 'pointer' }} onClick={() => onSelect(product)}>
         {/* Featured Tag */}
@@ -51,7 +51,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
           backgroundColor: 'var(--bg-surface)',
           backdropFilter: 'blur(6px)',
           WebkitBackdropFilter: 'blur(6px)'
-        }}>
+        }} itemProp="category">
           {product.category}
         </span>
 
@@ -60,6 +60,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
           alt={product.title} 
           loading="lazy"
           className="product-card-image"
+          itemProp="image"
           onError={(e) => {
             // Fallback for missing images
             (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=600';
@@ -90,18 +91,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
             <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{product.rating.toFixed(1)}</span>
           </div>
           
-          {/* Price */}
-          <span style={{
-            fontSize: '1.2rem',
-            fontWeight: 700,
-            color: 'var(--brand-primary)'
-          }}>
-            ${product.price.toFixed(2)}
-          </span>
+          {/* Price & Microdata Offer */}
+          <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
+            <meta itemProp="priceCurrency" content="USD" />
+            <meta itemProp="price" content={product.price.toString()} />
+            <link itemProp="availability" href="https://schema.org/InStock" />
+            <span style={{
+              fontSize: '1.2rem',
+              fontWeight: 700,
+              color: 'var(--brand-primary)'
+            }}>
+              ${product.price.toFixed(2)}
+            </span>
+          </div>
         </div>
 
         {/* Product Title */}
         <h3 
+          itemProp="name"
           onClick={() => onSelect(product)}
           style={{
             fontFamily: 'var(--font-body)',
@@ -152,19 +159,20 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
             Details
           </button>
           
-          {product.platform === 'Shopify' && product.variantId ? (
+          {product.variantId ? (
             <button 
-              onClick={() => addProductToCart(product.variantId!)}
+              onClick={(e) => { e.stopPropagation(); addProductToCart(product.variantId!); }}
               className="btn btn-copper"
               style={{ flex: 1, padding: '0.5rem 1rem', fontSize: '0.9rem' }}
             >
-              Buy on Shopify
+              Add to Cart
             </button>
           ) : (
             <a 
               href={product.link}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="btn btn-copper"
               style={{ 
                 flex: 1, 

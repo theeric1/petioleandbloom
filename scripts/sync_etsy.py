@@ -98,18 +98,21 @@ def fetch_shopify_products():
         print(f"Error fetching Shopify products: {e}")
     return products
 
-def parse_etsy_csv(csv_path="scripts/etsy_listings.csv"):
+def parse_etsy_csv(csv_path="EtsyListingsDownload.csv"):
+    if not os.path.exists(csv_path):
+        csv_path = "scripts/etsy_listings.csv"
+    
     products = []
     if not os.path.exists(csv_path):
-        print(f"No CSV found at {csv_path}. Skipping CSV import.")
+        print(f"No CSV found at EtsyListingsDownload.csv or scripts/etsy_listings.csv. Skipping CSV import.")
         return products
     
     try:
         print(f"Parsing Etsy CSV: {csv_path}...")
         with open(csv_path, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
-            for row in reader:
-                title = row.get('TITLE', row.get('Title', 'Unnamed'))
+            for i, row in enumerate(reader):
+                title = row.get('TITLE', row.get('Title', 'Unnamed')).strip()
                 if not title or title.lower() == 'unnamed':
                     continue
                 price_str = row.get('PRICE', row.get('Price', '0'))
@@ -119,29 +122,36 @@ def parse_etsy_csv(csv_path="scripts/etsy_listings.csv"):
                     price_val = 0.0
                 
                 description = row.get('DESCRIPTION', row.get('Description', ''))
-                listing_id = row.get('LISTING ID', row.get('Listing ID', str(hash(title))[:8]))
+                sku = row.get('SKU', str(hash(title))[:8]).strip()
+                listing_id = sku if sku else f"csv-{i+1}"
                 
-                # Image from CSV (rare) or fallback
-                img_url = row.get('IMAGE', row.get('Image', ''))
+                # Extract image from IMAGE1 or IMAGE
+                img_url = row.get('IMAGE1', row.get('IMAGE', row.get('Image', ''))).strip()
                 local_image_path = "/images/products/placeholder.jpg"
                 if img_url and img_url.startswith('http'):
-                    local_image_path = download_image(img_url, f"csv-{listing_id}.jpg")
+                    filename_safe = re.sub(r'[^\w\-]', '_', title[:30]).lower()
+                    local_image_path = download_image(img_url, f"etsy-{filename_safe}-{i+1}.jpg")
                 
+                # Determine category
+                tags = row.get('TAGS', '').lower()
+                is_plant = any(k in title.lower() or k in tags for k in ["plant", "musa", "orchid", "fruit", "vine", "seed", "tree", "leaf", "cutting", "monstera", "banana", "pot"])
+                category = "Plants" if is_plant else "Serums"
+
                 products.append({
                     "id": f"etsy-csv-{listing_id}",
-                    "title": title,
+                    "title": clean_title(title),
                     "price": price_val,
                     "originalPrice": f"{price_val} USD",
                     "description": clean_html_desc(description),
                     "image": local_image_path,
-                    "link": f"https://petioleandbloomllc.etsy.com/listing/{listing_id}",
-                    "category": "Plants",
+                    "link": f"https://petioleandbloomllc.etsy.com",
+                    "category": category,
                     "rating": 5.0,
                     "inStock": True,
                     "isFeatured": False,
                     "platform": "Etsy"
                 })
-                print(f"  Added CSV product: {title}")
+                print(f"  Added CSV product: {title} (${price_val})")
     except Exception as e:
         print(f"Error parsing CSV: {e}")
     return products

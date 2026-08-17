@@ -241,26 +241,44 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
             )}
 
             {/* Buy / Checkout Actions */}
-            <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto', paddingTop: '0.5rem' }}>
-              {product.platform === 'Shopify' && product.variantId ? (
-                <button
-                  onClick={() => {
-                    addProductToCart(product.variantId!);
-                    onClose(); // Optional: close modal on add to cart
-                  }}
-                  className="btn btn-copper"
-                  style={{
-                    flex: 1,
-                    textAlign: 'center',
-                    paddingBlock: '1rem',
-                    fontSize: '1.05rem',
-                    fontWeight: 600,
-                    border: 'none',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Buy on Shopify
-                </button>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: 'auto', paddingTop: '0.5rem' }}>
+              {product.variantId ? (
+                <>
+                  <button
+                    onClick={() => {
+                      addProductToCart(product.variantId!);
+                      onClose();
+                    }}
+                    className="btn btn-copper"
+                    style={{
+                      width: '100%',
+                      textAlign: 'center',
+                      paddingBlock: '1rem',
+                      fontSize: '1.05rem',
+                      fontWeight: 600,
+                      border: 'none',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                  {product.link && (
+                    <a 
+                      href={product.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        textAlign: 'center',
+                        textDecoration: 'underline',
+                        color: 'var(--text-secondary)',
+                        fontSize: '0.85rem',
+                        marginTop: '0.25rem'
+                      }}
+                    >
+                      Or buy on our Etsy store
+                    </a>
+                  )}
+                </>
               ) : (
                 <a 
                   href={product.link}
@@ -268,7 +286,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                   rel="noopener noreferrer"
                   className="btn btn-copper"
                   style={{
-                    flex: 1,
+                    width: '100%',
                     textAlign: 'center',
                     textDecoration: 'none',
                     paddingBlock: '1rem',
@@ -276,7 +294,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
                     fontWeight: 600
                   }}
                 >
-                  Buy on Etsy (via Share & Save)
+                  Buy on Etsy
                 </a>
               )}
             </div>
