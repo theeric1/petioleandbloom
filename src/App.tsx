@@ -85,6 +85,19 @@ function App() {
 
       {/* Main Content Landmark */}
       <main style={{ flexGrow: 1, paddingTop: '72px' }}>
+
+        {/* Temporary Shop Notice Banner */}
+        <div style={{
+          background: 'linear-gradient(135deg, #274a38, #1a3528)',
+          color: '#fff',
+          textAlign: 'center',
+          padding: '0.65rem 1.5rem',
+          fontSize: '0.88rem',
+          lineHeight: 1.5,
+          letterSpacing: '0.01em'
+        }}>
+          🛠️ We are working to resolve some issues with our shop. Please use the Etsy links for now until full functionality is restored.
+        </div>
         <Breadcrumbs currentTab={currentTab} setCurrentTab={setCurrentTab} />
 
         {/* ================= HOME TAB ================= */}
