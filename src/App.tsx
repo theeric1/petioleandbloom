@@ -27,16 +27,89 @@ interface Product {
     target: string;
   };
 }
+// Route map: pathname -> tab id
+const ROUTE_TO_TAB: Record<string, string> = {
+  '/': 'home',
+  '/shop': 'shop',
+  '/science': 'science',
+  '/care': 'about',
+  '/contact': 'contact',
+};
+const TAB_TO_ROUTE: Record<string, string> = {
+  'home': '/',
+  'shop': '/shop',
+  'science': '/science',
+  'about': '/care',
+  'contact': '/contact',
+};
+
+function getInitialTab(): string {
+  const path = window.location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
+  if (path.startsWith('/products/')) return 'shop';
+  return ROUTE_TO_TAB[path] || 'home';
+}
+
+function getInitialProduct(products: Product[]): Product | null {
+  const path = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+  if (!path.startsWith('/products/')) return null;
+  const slug = path.replace('/products/', '');
+  return products.find((p: Product) => (p as any).slug === slug) || null;
+}
 
 function App() {
-  const [currentTab, setCurrentTab] = useState<string>('home');
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const allProducts = productsData as Product[];
+  const [currentTab, setCurrentTab] = useState<string>(getInitialTab);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(() => getInitialProduct(allProducts));
 
   // Shop & Contact Form State
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
   const [formName, setFormName] = useState<string>('');
+
+  // Sync tab changes to URL
+  const navigateTab = (tab: string) => {
+    setCurrentTab(tab);
+    setSelectedProduct(null);
+    const route = TAB_TO_ROUTE[tab] || '/';
+    window.history.pushState({ tab }, '', route);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Sync product selection to URL
+  const selectProduct = (product: Product | null) => {
+    setSelectedProduct(product);
+    if (product && (product as any).slug) {
+      window.history.pushState({ product: (product as any).slug }, '', `/products/${(product as any).slug}`);
+    }
+  };
+
+  const closeProduct = () => {
+    setSelectedProduct(null);
+    // Go back to shop tab URL
+    const route = TAB_TO_ROUTE[currentTab] || '/shop';
+    window.history.pushState({ tab: currentTab }, '', route);
+  };
+
+  // Handle browser back/forward
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.toLowerCase().replace(/\/+$/, '') || '/';
+      if (path.startsWith('/products/')) {
+        const slug = path.replace('/products/', '');
+        const product = allProducts.find((p: Product) => (p as any).slug === slug);
+        if (product) {
+          navigateTab('shop');
+          setSelectedProduct(product);
+          return;
+        }
+      }
+      setSelectedProduct(null);
+      setCurrentTab(ROUTE_TO_TAB[path] || 'home');
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [allProducts]);
 
   useEffect(() => {
     initShopify();
@@ -81,7 +154,7 @@ function App() {
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }} className="gradient-bg-hero">
 
       {/* Dynamic Glass Navigation */}
-      <Navbar currentTab={currentTab} setCurrentTab={setCurrentTab} />
+      <Navbar currentTab={currentTab} setCurrentTab={navigateTab} />
 
       {/* Main Content Landmark */}
       <main style={{ flexGrow: 1, paddingTop: '72px' }}>
@@ -98,7 +171,7 @@ function App() {
         }}>
           🛠️ We are working to resolve some issues with our shop. Please use the Etsy links for now until full functionality is restored.
         </div>
-        <Breadcrumbs currentTab={currentTab} setCurrentTab={setCurrentTab} />
+        <Breadcrumbs currentTab={currentTab} setCurrentTab={navigateTab} />
 
         {/* ================= HOME TAB ================= */}
         {currentTab === 'home' && (
@@ -156,14 +229,14 @@ function App() {
 
                 <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
                   <button
-                    onClick={() => setCurrentTab('shop')}
+                    onClick={() => navigateTab('shop')}
                     className="btn btn-primary"
                     style={{ padding: '0.85rem 2.25rem', fontSize: '1rem' }}
                   >
                     Browse the Shop
                   </button>
                   <button
-                    onClick={() => setCurrentTab('science')}
+                    onClick={() => navigateTab('science')}
                     className="btn btn-secondary"
                     style={{ padding: '0.85rem 2.25rem', fontSize: '1rem' }}
                   >
@@ -255,7 +328,7 @@ function App() {
                     <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.25rem' }}>
                       GHK-Cu (copper tripeptide-1) is one of the most studied peptides in dermatology. At the right concentration, it activates collagen and elastin synthesis, supports matrix metalloproteinase activity for matrix remodeling, and strengthens the skin barrier through ceramide production. We don't use it as a marketing term—we use it at concentrations that actually do something.
                     </p>
-                    <button onClick={() => setCurrentTab('science')} className="btn btn-secondary" style={{ fontSize: '0.9rem' }}>
+                    <button onClick={() => navigateTab('science')} className="btn btn-secondary" style={{ fontSize: '0.9rem' }}>
                       See the full ingredient breakdown →
                     </button>
                   </div>
@@ -307,7 +380,7 @@ function App() {
               setCategoryFilter={setCategoryFilter}
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
-              setSelectedProduct={setSelectedProduct}
+              setSelectedProduct={selectProduct}
             />
             <ReviewsSection />
           </div>
@@ -596,7 +669,7 @@ function App() {
                   <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
                     Every plant order comes with free care consultation. Send us a photo of your plant and a description of what you are seeing and we will help you diagnose it.
                   </p>
-                  <button onClick={() => setCurrentTab('contact')} className="btn btn-primary">
+                  <button onClick={() => navigateTab('contact')} className="btn btn-primary">
                     Get Plant Care Help
                   </button>
                 </div>
@@ -800,7 +873,7 @@ function App() {
       </main>
 
       {/* Immersive Details Dialog Drawer */}
-      <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+      <ProductModal product={selectedProduct} onClose={closeProduct} />
 
       {/* ================= FOOTER ================= */}
       <footer style={{
@@ -855,11 +928,11 @@ function App() {
                 Navigation
               </h4>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.85rem' }}>
-                <li><button onClick={() => { setCurrentTab('home'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Home</button></li>
-                <li><button onClick={() => { setCurrentTab('shop'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Shop Catalog</button></li>
-                <li><button onClick={() => { setCurrentTab('about'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Plants &amp; Botanicals</button></li>
-                <li><button onClick={() => { setCurrentTab('science'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Peptides &amp; Bio-Actives</button></li>
-                <li><button onClick={() => { setCurrentTab('contact'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Contact Us</button></li>
+                <li><button onClick={() => { navigateTab('home'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Home</button></li>
+                <li><button onClick={() => { navigateTab('shop'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Shop Catalog</button></li>
+                <li><button onClick={() => { navigateTab('about'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Plants &amp; Botanicals</button></li>
+                <li><button onClick={() => { navigateTab('science'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Peptides &amp; Bio-Actives</button></li>
+                <li><button onClick={() => { navigateTab('contact'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Contact Us</button></li>
                 <li><a href="https://petioleandbloomllc.etsy.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)' }}>Etsy Store ↗</a></li>
               </ul>
             </div>

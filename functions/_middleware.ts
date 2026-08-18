@@ -4,7 +4,7 @@ export const onRequest: PagesFunction = async (context) => {
   const pathname = url.pathname.toLowerCase();
   const userAgent = (request.headers.get('user-agent') || '').toLowerCase();
 
-  // Always allow search engine crawlers, sitemaps, robots, and static media to pass through
+  // Always allow search engine crawlers, AI bots, and social media preview bots
   const isSearchCrawler = userAgent.includes('googlebot') ||
                           userAgent.includes('bingbot') ||
                           userAgent.includes('slurp') ||
@@ -14,7 +14,10 @@ export const onRequest: PagesFunction = async (context) => {
                           userAgent.includes('applebot') ||
                           userAgent.includes('gptbot') ||
                           userAgent.includes('claudebot') ||
-                          userAgent.includes('perplexitybot');
+                          userAgent.includes('perplexitybot') ||
+                          userAgent.includes('facebookexternalhit') ||
+                          userAgent.includes('twitterbot') ||
+                          userAgent.includes('linkedinbot');
 
   const isStaticAsset = pathname.endsWith('.xml') ||
                         pathname.endsWith('.txt') ||
@@ -23,6 +26,9 @@ export const onRequest: PagesFunction = async (context) => {
                         pathname.endsWith('.png') ||
                         pathname.endsWith('.webp') ||
                         pathname.endsWith('.ico') ||
+                        pathname.endsWith('.js') ||
+                        pathname.endsWith('.css') ||
+                        pathname.endsWith('.json') ||
                         pathname.startsWith('/images/') ||
                         pathname.startsWith('/assets/');
 
@@ -58,6 +64,8 @@ export const onRequest: PagesFunction = async (context) => {
     });
   }
 
-  // Continue to the requested page if not blocked
+  // SPA fallback: for section & product routes, try serving pre-rendered HTML first.
+  // If no static file exists at that path, Cloudflare Pages serves the root index.html
+  // automatically via the _redirects file. Crawlers get pre-rendered pages; users get SPA.
   return await context.next();
 };

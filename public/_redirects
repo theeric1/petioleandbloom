@@ -1,0 +1,4 @@
+# Cloudflare Pages SPA fallback
+# Pre-rendered static HTML takes priority (products/*, shop, science, care, contact)
+# This catch-all serves index.html for any route not matched by a static file
+/*  /index.html  200

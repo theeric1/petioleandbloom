@@ -4,17 +4,19 @@
 
 ## Primary Documentation
 - [Full Knowledge Base & Product Guide](https://petioleandbloom.com/llms-full.txt): Complete technical documentation, botanical catalog, scientific formulation dossiers, and return/shipping specifications.
-- [Storefront Catalog](https://petioleandbloom.com/#shop): Full listing of available tropical nursery specimens and peptide serums.
-- [Formulation Science & Research](https://petioleandbloom.com/#science): Clinical research citations, PubMed references, active ingredient breakdowns, and skin barrier biology.
-- [Plant Care & Acclimation Guide](https://petioleandbloom.com/#about): Step-by-step unboxing, root care, watering, and mycorrhizal soil guidance.
+- [Storefront Catalog](https://petioleandbloom.com/shop): Full listing of available tropical nursery specimens and peptide serums.
+- [Formulation Science & Research](https://petioleandbloom.com/science): Clinical research citations, PubMed references, active ingredient breakdowns, and skin barrier biology.
+- [Plant Care & Acclimation Guide](https://petioleandbloom.com/care): Step-by-step unboxing, root care, watering, and mycorrhizal soil guidance.
 
 ## Core Products
-- [Defy Peptide Face Serum](https://petioleandbloom.com/#shop): 30 mL fragrance-free serum with GHK-Cu (Copper Tripeptide-1), 4–5% Niacinamide, Silk Peptides, and Licorice Root Extract (Glabridin) for collagen remodeling and barrier support.
-- [Scalp & Hair Tonic](https://petioleandbloom.com/#shop): Formulated with GHK-Cu, Saw Palmetto extract, Rosemary Leaf extract (carnosic acid), Caffeine, and Niacinamide.
-- [Variegated Banana Specimens](https://petioleandbloom.com/#shop): Acclimated Musa "Aurea" Variegated and Musa Florida Variegated established in 3" pots with *Glomus* mycorrhizae.
-- [Vanilla Orchid Vines](https://petioleandbloom.com/#shop): Authentic *Vanilla planifolia* climbing orchids (Standard Green, Super Variegated, and Chartreuse).
-- [Tropical Fruit Plants](https://petioleandbloom.com/#shop): Lakatan Banana, Truly Tiny Dwarf Banana, Popoulu Banana, White Jade Pineapple, and Pink Lemonade Blueberry.
+- [Defy Peptide Face Serum](https://petioleandbloom.com/products/copper-peptide-serum-ghk-cu): 30 mL fragrance-free serum with GHK-Cu (Copper Tripeptide-1), 4–5% Niacinamide, Silk Peptides, and Licorice Root Extract (Glabridin) for collagen remodeling and barrier support.
+- [Variegated Vanilla Orchid (Chartreuse)](https://petioleandbloom.com/products/variegated-vanilla-orchid-chartreuse): Uncommon chartreuse-variegated Vanilla planifolia climbing orchid established in 3" pot with Glomus mycorrhizae.
+- [Vanilla Super Variegated Orchid](https://petioleandbloom.com/products/vanilla-super-variegated-orchid): Striking cream-and-green variegated Vanilla planifolia in 3" pot. Every plant uniquely patterned.
+- [Musa Florida Variegated Banana](https://petioleandbloom.com/products/musa-florida-variegated-banana): Rare collector-grade variegated banana with bold white striping. Well-rooted in enriched soil.
+- [Passion Fruit 2-Pack](https://petioleandbloom.com/products/passion-fruit-2-pack-panama-red-bounty): Panama Red & Bounty Passiflora edulis vines. Self-fertile, fast-flowering.
+- [Banana Bunch 4-Pack](https://petioleandbloom.com/products/banana-bunch-4-unique-musa-plants): Curated collection of Truly Tiny, Popoulu, Dwarf Green, and Lakatan banana plants.
 
-## Guarantees & Standards
-- [Live Arrival Guarantee](https://petioleandbloom.com/#about): Cold-weather heat packs included automatically for orders of 2+ plants. Full replacement or refund for damage reported within 24 hours.
-- [Etsy Shop](https://petioleandbloomllc.etsy.com): Verified marketplace shop with 65+ 5-star customer reviews.
+## Optional
+- [Live Arrival Guarantee](https://petioleandbloom.com/care): Cold-weather heat packs included for orders of 2+ plants. 24-hour damage reporting for replacement or full refund.
+- [Etsy Marketplace](https://petioleandbloomllc.etsy.com): Verified marketplace shop with 65+ 5-star customer reviews.
+- [Contact Us](https://petioleandbloom.com/contact): Reach Petiole & Bloom LLC directly.
