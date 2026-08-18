@@ -63,7 +63,7 @@ export const ShopGrid: React.FC<ShopGridProps> = ({
             {[
               { id: 'all', label: 'All Catalog' },
               { id: 'Serums', label: 'Nourishing Serums' },
-              { id: 'Plants', label: 'Plants & Botanicals' },
+              { id: 'Plants', label: 'Plants' },
               { id: 'Shopify', label: 'Shopify Direct' },
               { id: 'Etsy', label: 'Etsy Listings' }
             ].map((tab) => (

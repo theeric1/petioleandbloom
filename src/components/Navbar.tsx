@@ -53,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, setCurrentTab }) => 
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'shop', label: 'Shop' },
-    { id: 'about', label: 'Plants & Botanicals' },
+    { id: 'about', label: 'Plants' },
     { id: 'science', label: 'Peptides & Bio-Actives' },
     { id: 'contact', label: 'Contact' }
   ];

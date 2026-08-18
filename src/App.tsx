@@ -204,7 +204,7 @@ function App() {
                   color: 'var(--brand-secondary)',
                   marginBottom: '1.25rem'
                 }}>
-                  Rare Plants &nbsp;·&nbsp; Actually Effective Skin & Hair Care
+                  Established Nursery Plants &nbsp;·&nbsp; Clinical-Grade Skincare
                 </p>
 
                 <h1 style={{
@@ -220,11 +220,11 @@ function App() {
                   lineHeight: 1.6,
                   margin: '0 0 2.5rem 0',
                   color: 'var(--text-secondary)',
-                  maxWidth: '580px',
+                  maxWidth: '620px',
                   marginInline: 'auto',
                   marginBottom: '2.5rem'
                 }}>
-                  Well-rooted tropical specimens grown in our own nursery. Clinical copper peptide formulas backed by peer-reviewed research.
+                  Rare tropical plants grown in custom mycorrhizal soil, established and ready to thrive. Clinical GHK-Cu copper peptide formulas backed by dermatological research.
                 </p>
 
                 <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -256,10 +256,10 @@ function App() {
                   textAlign: 'center'
                 }}>
                   {[
-                    { icon: '🌿', title: 'Nursery-Grown', desc: 'Every plant is acclimated in our own nursery before it ships.' },
-                    { icon: '🧬', title: 'GHK-Cu at Clinical Dose', desc: 'Copper peptide concentrations based on published dermatology research.' },
-                    { icon: '📦', title: 'Live Arrival Guarantee', desc: 'Heat packs included in cold weather. Dead on arrival = replacement or refund.' },
-                    { icon: '🔬', title: 'Transparent Formulas', desc: 'Full ingredient disclosure. No proprietary blend smokescreens.' },
+                    { icon: '🌿', title: 'Established & Rooted', desc: 'Grown in our nursery to develop sturdy, resilient root systems before shipping.' },
+                    { icon: '🧬', title: 'GHK-Cu Clinical Dose', desc: 'Effective copper peptide concentrations based on published dermatology research.' },
+                    { icon: '📦', title: 'Live Arrival Guarantee', desc: 'Heat packs included in cold weather. 100% guarantee on every plant delivery.' },
+                    { icon: '🔬', title: 'Full Transparency', desc: 'Complete ingredient disclosure with zero mystery blends or fillers.' },
                   ].map((item) => (
                     <div key={item.title} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.6rem' }}>
                       <span style={{ fontSize: '1.8rem' }}>{item.icon}</span>
@@ -277,20 +277,20 @@ function App() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="hero-grid">
                   <div>
                     <span className="science-badge" style={{ marginBottom: '1rem' }}>Botanical Nursery</span>
-                    <h2 style={{ marginTop: '0.75rem', marginBottom: '1rem' }}>Plants That Are Ready to Grow</h2>
+                    <h2 style={{ marginTop: '0.75rem', marginBottom: '1rem' }}>Well-Rooted Plants, Built to Thrive</h2>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-                      Most online nurseries ship fresh tissue-culture plugs with almost no root mass—they look great in photos but go into shock the moment they leave the lab. We take a different approach. Every specimen in our catalog has been growing in our nursery long enough to develop a real, established root system. That means less acclimation stress for you and a much higher rate of success.
+                      Most online sellers ship fresh tissue-culture plugs straight from the lab—they look fine in photos but often collapse during transit. We grow every specimen in our nursery long enough to develop a robust, established root system before it ever leaves our doors. You receive sturdy, resilient plants built for a smooth transition to your home.
                     </p>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                      We specialize in tropical cultivars: variegated bananas, rare aroids, vanilla orchids, passion fruit vines, and more. All grown in a custom organic soil mix inoculated with endomycorrhizae.
+                      We specialize in rare tropical cultivars: variegated bananas, vanilla orchids, passion fruit vines, and edible fruit plants. All established in custom organic soil inoculated with endomycorrhizal fungi.
                     </p>
                   </div>
                   <div className="glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     {[
-                      { label: 'Endomycorrhizae Inoculated', detail: 'Expanded root surface area from day one.' },
-                      { label: 'Organic Slow-Release Nutrients', detail: 'Calcium-enriched soil for strong cell walls.' },
-                      { label: 'Cold-Weather Heat Packs', detail: 'Included automatically when temps drop below 40°F.' },
-                      { label: 'USDA Nursery Registered', detail: 'Compliant with interstate plant shipping regulations.' },
+                      { label: 'Endomycorrhizae Inoculated', detail: 'Fungal hyphae expand root surface area up to 1,000x for fast establishment.' },
+                      { label: 'Organic Slow-Release Soil', detail: 'Calcium and nutrient-enriched mix supporting sturdy cell walls.' },
+                      { label: 'Cold-Weather Heat Packs', detail: 'Included automatically for plant protection when temperatures drop.' },
+                      { label: 'Interstate Certified Compliance', detail: 'Carefully packaged and prepared for safe, compliant delivery nationwide.' },
                     ].map((f) => (
                       <div key={f.label} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                         <span style={{ color: 'var(--brand-primary)', fontWeight: 700, fontSize: '1.1rem', lineHeight: 1 }}>✓</span>
@@ -579,7 +579,7 @@ function App() {
 
               <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                 <span className="science-badge">Care & Cultivation</span>
-                <h1 style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>Plants & Botanicals</h1>
+                <h1 style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>Plants</h1>
                 <p style={{ fontSize: '1.1rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
                   Your new plant just traveled across the country in a box — a little drama is expected. Here is what to do from unboxing to thriving.
                 </p>
@@ -930,7 +930,7 @@ function App() {
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.85rem' }}>
                 <li><button onClick={() => { navigateTab('home'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Home</button></li>
                 <li><button onClick={() => { navigateTab('shop'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Shop Catalog</button></li>
-                <li><button onClick={() => { navigateTab('about'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Plants &amp; Botanicals</button></li>
+                <li><button onClick={() => { navigateTab('about'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Plants</button></li>
                 <li><button onClick={() => { navigateTab('science'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Peptides &amp; Bio-Actives</button></li>
                 <li><button onClick={() => { navigateTab('contact'); window.scrollTo(0,0); }} style={{ color: 'var(--text-secondary)' }}>Contact Us</button></li>
                 <li><a href="https://petioleandbloomllc.etsy.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)' }}>Etsy Store ↗</a></li>
@@ -1014,7 +1014,7 @@ function App() {
               <a href="https://petioleandbloomllc.etsy.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>
                 Etsy Store
               </a>
-              <span>USDA Nursery Registered</span>
+              <span>Interstate Shipping Compliant</span>
             </div>
           </div>
 
