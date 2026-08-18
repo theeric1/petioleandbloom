@@ -84,7 +84,7 @@ function productJsonLd(p) {
           "seller": {"@type": "Organization", "name": "Petiole & Bloom LLC"},
           "shippingDetails": {
             "@type": "OfferShippingDetails",
-            "shippingRate": {"@type": "MonetaryAmount", "value": "0.00", "currency": "USD"},
+            "shippingRate": {"@type": "MonetaryAmount", "value": "7.99", "currency": "USD"},
             "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"},
             "deliveryTime": {
               "@type": "ShippingDeliveryTime",
@@ -96,7 +96,7 @@ function productJsonLd(p) {
             "@type": "MerchantReturnPolicy",
             "applicableCountry": "US",
             "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-            "merchantReturnDays": 30,
+            "merchantReturnDays": 14,
             "returnMethod": "https://schema.org/ReturnByMail",
             "returnFees": "https://schema.org/FreeReturn"
           }
