@@ -57,7 +57,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelect }) =
         <img 
           src={product.image} 
           alt={product.title} 
+          width="600"
+          height="600"
           loading="lazy"
+          decoding="async"
           className="product-card-image"
           onError={(e) => {
             // Fallback for missing images

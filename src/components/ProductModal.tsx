@@ -151,6 +151,9 @@ export const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) 
             <img 
               src={product.image} 
               alt={product.title} 
+              width="600"
+              height="600"
+              decoding="async"
               style={{
                 width: '100%',
                 height: '100%',
