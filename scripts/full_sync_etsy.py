@@ -211,6 +211,71 @@ def scrape_full_etsy_catalog():
         
     return scraped_products
 
+
+def derive_sku_and_slug(p, i):
+    title = p['title'].lower()
+    slug_map = {
+        'PB-VAN-CHAR-3IN': 'variegated-vanilla-orchid-chartreuse',
+        'PB-VAN-PLAN-3IN': 'vanilla-orchid-actual-vanilla-bean-plant',
+        'PB-BLU-PLEM-3IN': 'pink-lemonade-blueberry-plant',
+        'PB-VAN-SVAR-3IN': 'vanilla-super-variegated-orchid',
+        'PB-PAS-2PK-3IN': 'passion-fruit-2-pack-panama-red-bounty',
+        'PB-MUSA-POP-3IN': 'popoulu-banana-plant-musa-popoulu',
+        'PB-MUSA-DGRN-3IN': 'dwarf-green-banana-plant-musa',
+        'PB-BLU-SPRH-3IN': 'springhigh-blueberry-plant',
+        'PB-PIN-WJAD-3IN': 'white-jade-edible-core-pineapple-plant',
+        'PB-MUSA-LAK-3IN': 'lakatan-golden-banana-plant',
+        'PB-DEFY-GHK-30ML': 'copper-peptide-serum-ghk-cu',
+        'PB-MUSA-TTIN-3IN': 'truly-tiny-banana-plant-dwarf-musa',
+        'PB-MUSA-BNCH-4PK': 'banana-bunch-4-unique-musa-plants',
+        'PB-MUSA-FLOR-3IN': 'musa-florida-variegated-banana'
+    }
+
+    google_cat_map = {
+        'Plants': 'Home & Garden > Plants > Live Plants',
+        'Serums': 'Health & Beauty > Personal Care > Cosmetics > Skin Care > Serums'
+    }
+
+    if 'banana bunch' in title:
+        sku = 'PB-MUSA-BNCH-4PK'
+    elif 'vanilla' in title and 'chartreuse' in title:
+        sku = 'PB-VAN-CHAR-3IN'
+    elif 'vanilla' in title and 'super' in title:
+        sku = 'PB-VAN-SVAR-3IN'
+    elif 'vanilla' in title:
+        sku = 'PB-VAN-PLAN-3IN'
+    elif 'pink lemonade' in title:
+        sku = 'PB-BLU-PLEM-3IN'
+    elif 'passion fruit' in title:
+        sku = 'PB-PAS-2PK-3IN'
+    elif 'popoulu' in title:
+        sku = 'PB-MUSA-POP-3IN'
+    elif 'dwarf green' in title:
+        sku = 'PB-MUSA-DGRN-3IN'
+    elif 'springhigh' in title:
+        sku = 'PB-BLU-SPRH-3IN'
+    elif 'white jade' in title:
+        sku = 'PB-PIN-WJAD-3IN'
+    elif 'lakatan' in title:
+        sku = 'PB-MUSA-LAK-3IN'
+    elif 'copper peptide' in title or 'defy' in title:
+        sku = 'PB-DEFY-GHK-30ML'
+    elif 'truly tiny' in title:
+        sku = 'PB-MUSA-TTIN-3IN'
+    elif 'florida' in title:
+        sku = 'PB-MUSA-FLOR-3IN'
+    elif 'aurea' in title:
+        sku = 'PB-MUSA-AUREA-3IN'
+    else:
+        clean = re.sub(r'[^a-zA-Z0-9]', '-', title[:20]).strip('-').upper()
+        sku = f'PB-{clean}-{i+1:02d}'
+
+    slug = slug_map.get(sku, re.sub(r'[^a-z0-9]+', '-', title).strip('-'))
+    p['sku'] = sku
+    p['slug'] = slug
+    p['googleProductCategory'] = google_cat_map.get(p.get('category'), 'Home & Garden > Plants > Live Plants')
+    return p
+
 def main():
     print("--- Starting Heavy Playwright Etsy Synchronizer ---")
     start_time = time.time()
