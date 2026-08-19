@@ -11,7 +11,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-VAN-CHAR-3IN",
+    "slug": "variegated-vanilla-orchid-chartreuse",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-Vanilla-X1,Vanilla-X2",
@@ -25,7 +28,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-VAN-PLAN-3IN",
+    "slug": "vanilla-orchid-actual-vanilla-bean-plant",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-csv-3",
@@ -39,7 +45,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-BLU-PLEM-3IN",
+    "slug": "pink-lemonade-blueberry-plant",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-VanillaSV-X1,VanillaSV-X2",
@@ -53,7 +62,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-VAN-SVAR-3IN",
+    "slug": "vanilla-super-variegated-orchid",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-csv-5",
@@ -67,7 +79,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-PAS-2PK-3IN",
+    "slug": "passion-fruit-2-pack-panama-red-bounty",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-POPOULU-X2,POPOULU-X1,POPOULU-X3",
@@ -81,7 +96,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-POP-3IN",
+    "slug": "popoulu-banana-plant-musa-popoulu",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-GREEN-X1,GREEN-X2,GREEN-X3",
@@ -95,7 +113,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-DGRN-3IN",
+    "slug": "dwarf-green-banana-plant-musa",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-csv-8",
@@ -109,7 +130,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-BLU-SPRH-3IN",
+    "slug": "springhigh-blueberry-plant",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-csv-9",
@@ -123,7 +147,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-PIN-WJAD-3IN",
+    "slug": "white-jade-edible-core-pineapple-plant",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-LAKATAN-X1,LAKATAN-X2,LAKATAN-X3",
@@ -137,7 +164,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-LAK-3IN",
+    "slug": "lakatan-golden-banana-plant",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-DEFY-A30,DEFY-30",
@@ -151,7 +181,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-DEFY-GHK-30ML",
+    "slug": "copper-peptide-serum-ghk-cu",
+    "googleProductCategory": "Health & Beauty > Personal Care > Cosmetics > Skin Care > Serums"
   },
   {
     "id": "etsy-csv-MusaTruly-X1,MusaTruly-X3,MusaTruly-X2,MusaTruly-4in",
@@ -165,7 +198,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-TTIN-3IN",
+    "slug": "truly-tiny-banana-plant-dwarf-musa",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-Banana4pl",
@@ -179,7 +215,10 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-BNCH-4PK",
+    "slug": "banana-bunch-4-unique-musa-plants",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   },
   {
     "id": "etsy-csv-csv-14",
@@ -193,6 +232,9 @@
     "rating": 5.0,
     "inStock": true,
     "isFeatured": false,
-    "platform": "Etsy"
+    "platform": "Etsy",
+    "sku": "PB-MUSA-FLOR-3IN",
+    "slug": "musa-florida-variegated-banana",
+    "googleProductCategory": "Home & Garden > Plants > Live Plants"
   }
 ]
