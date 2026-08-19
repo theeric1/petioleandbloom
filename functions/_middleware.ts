@@ -38,8 +38,11 @@ export const onRequest: PagesFunction = async (context) => {
 
     // Enforce no-store on HTML and XML so crawlers never receive stale CDN cached versions
     if (!isStaticAsset || pathname.endsWith('sitemap.xml')) {
-      newHeaders.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+      newHeaders.set('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
       newHeaders.set('CDN-Cache-Control', 'no-store');
+      newHeaders.set('Cloudflare-CDN-Cache-Control', 'no-store');
+      newHeaders.set('Surrogate-Control', 'no-store');
+      newHeaders.set('Pragma', 'no-cache');
       newHeaders.set('X-Robots-Tag', 'all');
     }
 
@@ -74,8 +77,10 @@ export const onRequest: PagesFunction = async (context) => {
   // SPA fallback for section & product routes
   const response = await context.next();
   const newHeaders = new Headers(response.headers);
-  newHeaders.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+  newHeaders.set('Cache-Control', 'no-cache, no-store, must-revalidate, max-age=0');
   newHeaders.set('CDN-Cache-Control', 'no-store');
+  newHeaders.set('Cloudflare-CDN-Cache-Control', 'no-store');
+  newHeaders.set('Surrogate-Control', 'no-store');
 
   return new Response(response.body, {
     status: response.status,
