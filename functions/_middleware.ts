@@ -34,18 +34,25 @@ export const onRequest: PagesFunction = async (context) => {
 
   if (isSearchCrawler || isStaticAsset) {
     const response = await context.next();
+    const newHeaders = new Headers(response.headers);
+
+    // Enforce no-store on HTML and XML so crawlers never receive stale CDN cached versions
+    if (!isStaticAsset || pathname.endsWith('sitemap.xml')) {
+      newHeaders.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+      newHeaders.set('CDN-Cache-Control', 'no-store');
+      newHeaders.set('X-Robots-Tag', 'all');
+    }
+
     // Explicitly enforce XML MIME type on sitemaps
     if (pathname.endsWith('sitemap.xml')) {
-      const newHeaders = new Headers(response.headers);
       newHeaders.set('Content-Type', 'application/xml; charset=utf-8');
-      newHeaders.set('X-Robots-Tag', 'all');
-      return new Response(response.body, {
-        status: response.status,
-        statusText: response.statusText,
-        headers: newHeaders
-      });
     }
-    return response;
+
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: newHeaders
+    });
   }
 
   // Cloudflare automatically injects the user's country code into the cf object
@@ -64,8 +71,15 @@ export const onRequest: PagesFunction = async (context) => {
     });
   }
 
-  // SPA fallback: for section & product routes, try serving pre-rendered HTML first.
-  // If no static file exists at that path, Cloudflare Pages serves the root index.html
-  // automatically via the _redirects file. Crawlers get pre-rendered pages; users get SPA.
-  return await context.next();
+  // SPA fallback for section & product routes
+  const response = await context.next();
+  const newHeaders = new Headers(response.headers);
+  newHeaders.set('Cache-Control', 'no-cache, no-store, must-revalidate');
+  newHeaders.set('CDN-Cache-Control', 'no-store');
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: newHeaders
+  });
 };
