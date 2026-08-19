@@ -4,10 +4,17 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '..', 'dist');
+const publicDir = path.resolve(__dirname, '..', 'public');
 const productsPath = path.resolve(__dirname, '..', 'src', 'data', 'products.json');
 
 const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'));
-const template = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
+
+// Read template from dist/index.html if available, fallback to root index.html
+let templatePath = path.join(distDir, 'index.html');
+if (!fs.existsSync(templatePath)) {
+  templatePath = path.resolve(__dirname, '..', 'index.html');
+}
+const template = fs.readFileSync(templatePath, 'utf-8');
 const today = new Date().toISOString().split('T')[0];
 
 // Helper: strip emoji and clean description for schema
@@ -29,6 +36,15 @@ function makeSeoDesc(product) {
 // Helper: escape HTML entities
 function escHtml(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Helper: write file to multiple directories (both dist and public)
+function writeToTargetDirs(relativePath, content) {
+  const targets = [path.join(distDir, relativePath), path.join(publicDir, relativePath)];
+  for (const t of targets) {
+    fs.mkdirSync(path.dirname(t), { recursive: true });
+    fs.writeFileSync(t, content);
+  }
 }
 
 // Build product JSON-LD for a single product page
@@ -110,9 +126,6 @@ function productJsonLd(p) {
 let productCount = 0;
 for (const p of products) {
   const slug = p.slug;
-  const outDir = path.join(distDir, 'products', slug);
-  fs.mkdirSync(outDir, { recursive: true });
-
   const seoDesc = makeSeoDesc(p);
   const canonicalUrl = `https://petioleandbloom.com/products/${slug}`;
   const imgUrl = `https://petioleandbloom.com${p.image}`;
@@ -152,7 +165,7 @@ for (const p of products) {
     `<script type="application/ld+json">\n${jsonLd}\n    </script>`
   );
 
-  fs.writeFileSync(path.join(outDir, 'index.html'), html);
+  writeToTargetDirs(path.join('products', slug, 'index.html'), html);
   productCount++;
 }
 
@@ -160,14 +173,11 @@ for (const p of products) {
 const sections = [
   { path: 'shop', title: 'Shop All Products', desc: 'Browse all rare tropical plants, vanilla orchids, variegated bananas, and copper peptide serums from Petiole & Bloom. Free US shipping.' },
   { path: 'science', title: 'Peptides & Bio-Actives Science', desc: 'Clinical research behind GHK-Cu copper peptide serums, Niacinamide, silk peptides, and licorice root extract. Peer-reviewed references.' },
-  { path: 'care', title: 'Plant Care & Acclimation Guide', desc: 'Step-by-step guide for unboxing, acclimating, watering, and repotting your new tropical plants from Petiole & Bloom.' },
+  { path: 'care', title: 'Plant Care Guide', desc: 'Step-by-step guide for unboxing, acclimating, watering, and repotting your new tropical plants from Petiole & Bloom.' },
   { path: 'contact', title: 'Contact Us', desc: 'Get in touch with Petiole & Bloom LLC. US-based botanical nursery and peptide formulation lab.' }
 ];
 
 for (const section of sections) {
-  const outDir = path.join(distDir, section.path);
-  fs.mkdirSync(outDir, { recursive: true });
-
   const canonicalUrl = `https://petioleandbloom.com/${section.path}`;
   let html = template;
 
@@ -178,7 +188,7 @@ for (const section of sections) {
   html = html.replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${escHtml(section.desc)}" />`);
   html = html.replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${canonicalUrl}" />`);
 
-  fs.writeFileSync(path.join(outDir, 'index.html'), html);
+  writeToTargetDirs(path.join(section.path, 'index.html'), html);
 }
 
 // ============ GENERATE SITEMAP.XML ============
@@ -235,9 +245,8 @@ for (const p of products) {
 
 sitemap += `</urlset>\n`;
 
-// Write sitemap to both public/ (source) and dist/ (build output)
-fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap);
-fs.writeFileSync(path.resolve(__dirname, '..', 'public', 'sitemap.xml'), sitemap);
+// Write sitemap to both public/ and dist/
+writeToTargetDirs('sitemap.xml', sitemap);
 
-console.log(`Pre-rendered ${productCount} product pages + ${sections.length} section pages.`);
+console.log(`Pre-rendered ${productCount} product pages + ${sections.length} section pages to dist/ and public/.`);
 console.log(`Generated sitemap.xml with ${5 + products.length} URLs.`);
